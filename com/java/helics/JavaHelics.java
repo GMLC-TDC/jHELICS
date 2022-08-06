@@ -7,181 +7,132 @@ SPDX-License-Identifier: BSD-3-Clause
 
 package com.java.helics;
 
-import static com.java.helics.HelicsBigNumber.*;
 import com.sun.jna.*;
 import com.sun.jna.ptr.*;
 
-public class JavaHELICS {
+public interface JavaHelicsLibrary extends Library {
 	
-	public static final int HELICS_INVALID_OPTION_INDEX =  -101;
-
-	/*
-result returned for requesting the value of an invalid/unknown property
-*/
-
-	public static final int HELICS_INVALID_PROPERTY_VALUE =  -972;
-
-	
-	public static final double cHelicsBigNumber =  HELICS_BIG_NUMBER;
-	/*
-definition of time zero-the beginning of simulation
-*/
-
-	public static final double HELICS_TIME_ZERO =  0.0;
-
-	/*
-definition of the minimum time resolution
-*/
-
-	public static final double HELICS_TIME_EPSILON =  1e-09;
-
-	/*
-definition of an invalid time that has no meaning
-*/
-
-	public static final double HELICS_TIME_INVALID =  -1.785e+39;
-
-	
-	/*
-	definition of time signifying the federate has terminated or run until the end of the simulation
-	*/
-	public static final double HELICS_TIME_MAXTIME =  HELICS_BIG_NUMBER;
-	/*
-indicator used for a true response
-*/
-
-	public static final int HELICS_TRUE =  1;
-
-	/*
-indicator used for a false response
-*/
-
-	public static final int HELICS_FALSE =  0;
-
-	public interface HelicsInterface extends Library {
-		HelicsInterface INSTANCE = (HelicsInterface)Native.loadLibrary('helics', HelicsInterface.class);
+	/** create a helics managed data buffer with initial capacity*/
 		
-		/** create a helics managed data buffer with initial capacity*/
+	HelicsDataBuffer helicsCreateDataBuffer(int initialCapacity);
+	/** check whether a buffer is valid*/
 		
-		HelicsDataBuffer helicsCreateDataBuffer(int initialCapacity);
-		/** check whether a buffer is valid*/
+	int helicsDataBufferIsValid(HelicsDataBuffer data);
+	/** wrap user data in a buffer object*/
 		
-		int helicsDataBufferIsValid(HelicsDataBuffer data);
-		/** wrap user data in a buffer object*/
+	HelicsDataBuffer helicsWrapDataInBuffer(Pointer data,int dataSize,int dataCapacity);
+	/** free a DataBuffer */
 		
-		HelicsDataBuffer helicsWrapDataInBuffer(Pointer data,int dataSize,int dataCapacity);
-		/** free a DataBuffer */
+	void helicsDataBufferFree(HelicsDataBuffer data);
+	/** get the data buffer size*/
 		
-		void helicsDataBufferFree(HelicsDataBuffer data);
-		/** get the data buffer size*/
+	int helicsDataBufferSize(HelicsDataBuffer data);
+	/** get the data buffer capacity*/
 		
-		int helicsDataBufferSize(HelicsDataBuffer data);
-		/** get the data buffer capacity*/
+	int helicsDataBufferCapacity(HelicsDataBuffer data);
+	/** get a pointer to the raw data*/
 		
-		int helicsDataBufferCapacity(HelicsDataBuffer data);
-		/** get a pointer to the raw data*/
-		
-		Pointer helicsDataBufferData(HelicsDataBuffer data);
-		/** increase the capacity a data buffer can hold without reallocating memory
+	Pointer helicsDataBufferData(HelicsDataBuffer data);
+	/** increase the capacity a data buffer can hold without reallocating memory
 @return HELICS_TRUE if the reservation was successful HELICS_FALSE otherwise*/
 		
-		int helicsDataBufferReserve(HelicsDataBuffer data,int newCapacity);
-		/** create a new data buffer and copy an existing buffer*/
+	int helicsDataBufferReserve(HelicsDataBuffer data,int newCapacity);
+	/** create a new data buffer and copy an existing buffer*/
 		
-		HelicsDataBuffer helicsDataBufferClone(HelicsDataBuffer data);
-		/** convert an integer to serialized bytes*/
+	HelicsDataBuffer helicsDataBufferClone(HelicsDataBuffer data);
+	/** convert an integer to serialized bytes*/
 		
-		int helicsIntegerToBytes(int value,HelicsDataBuffer data);
-		/** convert a double to serialized bytes*/
+	int helicsIntegerToBytes(int value,HelicsDataBuffer data);
+	/** convert a double to serialized bytes*/
 		
-		int helicsDoubleToBytes(double value,HelicsDataBuffer data);
-		/** convert a string to serialized bytes*/
+	int helicsDoubleToBytes(double value,HelicsDataBuffer data);
+	/** convert a string to serialized bytes*/
 		
-		int helicsStringToBytes(String value,HelicsDataBuffer data);
-		/** convert a raw string (may contain nulls) to serialized bytes*/
+	int helicsStringToBytes(String value,HelicsDataBuffer data);
+	/** convert a raw string (may contain nulls) to serialized bytes*/
 		
-		int helicsRawStringToBytes(String str,int stringSize,HelicsDataBuffer data);
-		/** convert a bool to serialized bytes*/
+	int helicsRawStringToBytes(String str,int stringSize,HelicsDataBuffer data);
+	/** convert a bool to serialized bytes*/
 		
-		int helicsBooleanToBytes(int value,HelicsDataBuffer data);
-		/** convert a char to serialized bytes*/
+	int helicsBooleanToBytes(int value,HelicsDataBuffer data);
+	/** convert a char to serialized bytes*/
 		
-		int helicsCharToBytes(char value,HelicsDataBuffer data);
-		/** convert a named point to serialized bytes*/
+	int helicsCharToBytes(char value,HelicsDataBuffer data);
+	/** convert a named point to serialized bytes*/
 		
-		int helicsNamedPointToBytes(String name,double value,HelicsDataBuffer data);
-		/** extract the data type from the data buffer, if the type isn't recognized UNKNOWN is returned*/
+	int helicsNamedPointToBytes(String name,double value,HelicsDataBuffer data);
+	/** extract the data type from the data buffer, if the type isn't recognized UNKNOWN is returned*/
 		
-		int helicsDataBufferType(HelicsDataBuffer data);
-		/** convert a data buffer to an int*/
+	int helicsDataBufferType(HelicsDataBuffer data);
+	/** convert a data buffer to an int*/
 		
-		int helicsDataBufferToInteger(HelicsDataBuffer data);
-		/** convert a data buffer to a double*/
+	int helicsDataBufferToInteger(HelicsDataBuffer data);
+	/** convert a data buffer to a double*/
 		
-		double helicsDataBufferToDouble(HelicsDataBuffer data);
-		/** convert a data buffer to a boolean*/
+	double helicsDataBufferToDouble(HelicsDataBuffer data);
+	/** convert a data buffer to a boolean*/
 		
-		int helicsDataBufferToBoolean(HelicsDataBuffer data);
-		/** convert a data buffer to a char*/
+	int helicsDataBufferToBoolean(HelicsDataBuffer data);
+	/** convert a data buffer to a char*/
 		
-		char helicsDataBufferToChar(HelicsDataBuffer data);
-		/** get the size of memory required to retrieve a string from a data buffer this includes space for a null terminator*/
+	char helicsDataBufferToChar(HelicsDataBuffer data);
+	/** get the size of memory required to retrieve a string from a data buffer this includes space for a null terminator*/
 		
-		int helicsDataBufferStringSize(HelicsDataBuffer data);
-		/** convert a data buffer to a time*/
+	int helicsDataBufferStringSize(HelicsDataBuffer data);
+	/** convert a data buffer to a time*/
 		
-		double helicsDataBufferToTime(HelicsDataBuffer data);
-		/** convert a data buffer to complex values*/
+	double helicsDataBufferToTime(HelicsDataBuffer data);
+	/** convert a data buffer to complex values*/
 		
-		void helicsDataBufferToComplex(HelicsDataBuffer data,DoubleByReference real,DoubleByReference imag);
-		/** get the number of elements that would be required if a vector were retrieved*/
+	void helicsDataBufferToComplex(HelicsDataBuffer data,DoubleByReference real,DoubleByReference imag);
+	/** get the number of elements that would be required if a vector were retrieved*/
 		
-		int helicsDataBufferVectorSize(HelicsDataBuffer data);
-		/** convert the data in a data buffer to a different type representation
+	int helicsDataBufferVectorSize(HelicsDataBuffer data);
+	/** convert the data in a data buffer to a different type representation
 @param data the buffer to convert
 @param newDataType the type that it is desired for the buffer to be converted to
 @return true if the conversion was successful*/
 		
-		int helicsDataBufferConvertToType(HelicsDataBuffer data,int newDataType);
-		/**
+	int helicsDataBufferConvertToType(HelicsDataBuffer data,int newDataType);
+	/**
  * Get a version string for HELICS.
  */
 		
-		String helicsGetVersion();
-		/**
+	String helicsGetVersion();
+	/**
  * Get the build flags used to compile HELICS.
  */
 		
-		String helicsGetBuildFlags();
-		/**
+	String helicsGetBuildFlags();
+	/**
  * Get the compiler version used to compile HELICS.
  */
 		
-		String helicsGetCompilerVersion();
-		/**
+	String helicsGetCompilerVersion();
+	/**
  * Get a json formatted system information string, containing version info.
  * The string contains fields with system information like cpu, core count, operating system, and memory,
  * as well as information about the HELICS build.  Used for debugging reports and gathering other information.
  */
 		
-		String helicsGetSystemInfo();
-		/** Load a signal handler that handles Ctrl-C and shuts down all HELICS brokers, cores,
+	String helicsGetSystemInfo();
+	/** Load a signal handler that handles Ctrl-C and shuts down all HELICS brokers, cores,
 and federates then exits the process.*/
 		
-		void helicsLoadSignalHandler();
-		/** Load a signal handler that handles Ctrl-C and shuts down all HELICS brokers, cores,
+	void helicsLoadSignalHandler();
+	/** Load a signal handler that handles Ctrl-C and shuts down all HELICS brokers, cores,
 and federates then exits the process.  This operation will execute in a newly created and detached thread returning control back to the
 calling program before completing operations.*/
 		
-		void helicsLoadThreadedSignalHandler();
-		/** Clear HELICS based signal handlers.*/
+	void helicsLoadThreadedSignalHandler();
+	/** Clear HELICS based signal handlers.*/
 		
-		void helicsClearSignalHandler();
-		/** Execute a global abort by sending an error code to all cores, brokers,
+	void helicsClearSignalHandler();
+	/** Execute a global abort by sending an error code to all cores, brokers,
 and federates that were created through the current library instance.*/
 		
-		void helicsAbort(int errorCode,String errorString);
-		/**
+	void helicsAbort(int errorCode,String errorString);
+	/**
  * Returns true if core/broker type specified is available in current compilation.
  *
  * @param type A string representing a core type.
@@ -189,8 +140,8 @@ and federates that were created through the current library instance.*/
  * @details Options include "zmq", "udp", "ipc", "interprocess", "tcp", "default", "mpi".
  */
 		
-		int helicsIsCoreTypeAvailable(String type);
-		/**
+	int helicsIsCoreTypeAvailable(String type);
+	/**
  * Create a core object.
  *
  * @param type The type of the core to create.
@@ -207,8 +158,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		HelicsCore helicsCreateCore(String type,String name,String initString,HelicsError err);
-		/**
+	HelicsCore helicsCreateCore(String type,String name,String initString,HelicsError err);
+	/**
  * Create a new reference to an existing core.
  *
  * @details This will create a new broker object that references the existing broker. The new broker object must be freed as well.
@@ -219,15 +170,15 @@ and federates that were created through the current library instance.*/
  * @return A new reference to the same broker.
  */
 		
-		HelicsCore helicsCoreClone(HelicsCore core,HelicsError err);
-		/**
+	HelicsCore helicsCoreClone(HelicsCore core,HelicsError err);
+	/**
  * Check if a core object is a valid object.
  *
  * @param core The HelicsCore object to test.
  */
 		
-		int helicsCoreIsValid(HelicsCore core);
-		/**
+	int helicsCoreIsValid(HelicsCore core);
+	/**
  * Create a broker object.
  *
  * @param type The type of the broker to create.
@@ -245,8 +196,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		HelicsBroker helicsCreateBroker(String type,String name,String initString,HelicsError err);
-		/**
+	HelicsBroker helicsCreateBroker(String type,String name,String initString,HelicsError err);
+	/**
  * Create a new reference to an existing broker.
  *
  * @details This will create a new broker object that references the existing broker it must be freed as well.
@@ -259,15 +210,15 @@ and federates that were created through the current library instance.*/
  * @return A new reference to the same broker.
  */
 		
-		HelicsBroker helicsBrokerClone(HelicsBroker broker,HelicsError err);
-		/**
+	HelicsBroker helicsBrokerClone(HelicsBroker broker,HelicsError err);
+	/**
  * Check if a broker object is a valid object.
  *
  * @param broker The HelicsBroker object to test.
  */
 		
-		int helicsBrokerIsValid(HelicsBroker broker);
-		/**
+	int helicsBrokerIsValid(HelicsBroker broker);
+	/**
  * Check if a broker is connected.
  *
  * @details A connected broker implies it is attached to cores or cores could reach out to communicate.
@@ -275,8 +226,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_FALSE if not connected.
  */
 		
-		int helicsBrokerIsConnected(HelicsBroker broker);
-		/**
+	int helicsBrokerIsConnected(HelicsBroker broker);
+	/**
  * Link a named publication and named input using a broker.
  *
  * @param broker The broker to generate the connection from.
@@ -287,8 +238,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsBrokerDataLink(HelicsBroker broker,String source,String target,HelicsError err);
-		/**
+	void helicsBrokerDataLink(HelicsBroker broker,String source,String target,HelicsError err);
+	/**
  * Link a named filter to a source endpoint.
  *
  * @param broker The broker to generate the connection from.
@@ -299,8 +250,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsBrokerAddSourceFilterToEndpoint(HelicsBroker broker,String filter,String endpoint,HelicsError err);
-		/**
+	void helicsBrokerAddSourceFilterToEndpoint(HelicsBroker broker,String filter,String endpoint,HelicsError err);
+	/**
  * Link a named filter to a destination endpoint.
  *
  * @param broker The broker to generate the connection from.
@@ -311,8 +262,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsBrokerAddDestinationFilterToEndpoint(HelicsBroker broker,String filter,String endpoint,HelicsError err);
-		/**
+	void helicsBrokerAddDestinationFilterToEndpoint(HelicsBroker broker,String filter,String endpoint,HelicsError err);
+	/**
  * Load a file containing connection information.
  *
  * @param broker The broker to generate the connections from.
@@ -322,8 +273,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsBrokerMakeConnections(HelicsBroker broker,String file,HelicsError err);
-		/**
+	void helicsBrokerMakeConnections(HelicsBroker broker,String file,HelicsError err);
+	/**
  * Wait for the core to disconnect.
  *
  * @param core The core to wait for.
@@ -335,8 +286,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the disconnect was successful, HELICS_FALSE if there was a timeout.
  */
 		
-		int helicsCoreWaitForDisconnect(HelicsCore core,int msToWait,HelicsError err);
-		/**
+	int helicsCoreWaitForDisconnect(HelicsCore core,int msToWait,HelicsError err);
+	/**
  * Wait for the broker to disconnect.
  *
  * @param broker The broker to wait for.
@@ -348,8 +299,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the disconnect was successful, HELICS_FALSE if there was a timeout.
  */
 		
-		int helicsBrokerWaitForDisconnect(HelicsBroker broker,int msToWait,HelicsError err);
-		/**
+	int helicsBrokerWaitForDisconnect(HelicsBroker broker,int msToWait,HelicsError err);
+	/**
  * Check if a core is connected.
  *
  * @details A connected core implies it is attached to federates or federates could be attached to it
@@ -357,8 +308,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_FALSE if not connected, HELICS_TRUE if it is connected.
  */
 		
-		int helicsCoreIsConnected(HelicsCore core);
-		/**
+	int helicsCoreIsConnected(HelicsCore core);
+	/**
  * Link a named publication and named input using a core.
  *
  * @param core The core to generate the connection from.
@@ -369,8 +320,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsCoreDataLink(HelicsCore core,String source,String target,HelicsError err);
-		/**
+	void helicsCoreDataLink(HelicsCore core,String source,String target,HelicsError err);
+	/**
  * Link a named filter to a source endpoint.
  *
  * @param core The core to generate the connection from.
@@ -381,8 +332,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsCoreAddSourceFilterToEndpoint(HelicsCore core,String filter,String endpoint,HelicsError err);
-		/**
+	void helicsCoreAddSourceFilterToEndpoint(HelicsCore core,String filter,String endpoint,HelicsError err);
+	/**
  * Link a named filter to a destination endpoint.
  *
  * @param core The core to generate the connection from.
@@ -393,8 +344,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsCoreAddDestinationFilterToEndpoint(HelicsCore core,String filter,String endpoint,HelicsError err);
-		/**
+	void helicsCoreAddDestinationFilterToEndpoint(HelicsCore core,String filter,String endpoint,HelicsError err);
+	/**
  * Load a file containing connection information.
  *
  * @param core The core to generate the connections from.
@@ -404,8 +355,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsCoreMakeConnections(HelicsCore core,String file,HelicsError err);
-		/**
+	void helicsCoreMakeConnections(HelicsCore core,String file,HelicsError err);
+	/**
  * Get an identifier for the broker.
  *
  * @param broker The broker to query.
@@ -413,8 +364,8 @@ and federates that were created through the current library instance.*/
  * @return A string containing the identifier for the broker.
  */
 		
-		String helicsBrokerGetIdentifier(HelicsBroker broker);
-		/**
+	String helicsBrokerGetIdentifier(HelicsBroker broker);
+	/**
  * Get an identifier for the core.
  *
  * @param core The core to query.
@@ -422,8 +373,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the identifier of the core.
  */
 		
-		String helicsCoreGetIdentifier(HelicsCore core);
-		/**
+	String helicsCoreGetIdentifier(HelicsCore core);
+	/**
  * Get the network address associated with a broker.
  *
  * @param broker The broker to query.
@@ -431,8 +382,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the network address of the broker.
  */
 		
-		String helicsBrokerGetAddress(HelicsBroker broker);
-		/**
+	String helicsBrokerGetAddress(HelicsBroker broker);
+	/**
  * Get the network address associated with a core.
  *
  * @param core The core to query.
@@ -440,8 +391,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the network address of the broker.
  */
 		
-		String helicsCoreGetAddress(HelicsCore core);
-		/**
+	String helicsCoreGetAddress(HelicsCore core);
+	/**
  * Set the core to ready for init.
  *
  * @details This function is used for cores that have filters but no federates so there needs to be
@@ -453,8 +404,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsCoreSetReadyToInit(HelicsCore core,HelicsError err);
-		/**
+	void helicsCoreSetReadyToInit(HelicsCore core,HelicsError err);
+	/**
  * Connect a core to the federate based on current configuration.
  *
  * @param core The core to connect.
@@ -465,8 +416,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_FALSE if not connected, HELICS_TRUE if it is connected.
  */
 		
-		int helicsCoreConnect(HelicsCore core,HelicsError err);
-		/**
+	int helicsCoreConnect(HelicsCore core,HelicsError err);
+	/**
  * Disconnect a core from the federation.
  *
  * @param core The core to query.
@@ -475,8 +426,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsCoreDisconnect(HelicsCore core,HelicsError err);
-		/**
+	void helicsCoreDisconnect(HelicsCore core,HelicsError err);
+	/**
  * Get an existing federate object from a core by name.
  *
  * @details The federate must have been created by one of the other functions and at least one of the objects referencing the created
@@ -490,8 +441,8 @@ and federates that were created through the current library instance.*/
  * @return NULL if no fed is available by that name otherwise a HelicsFederate with that name.
  */
 		
-		HelicsFederate helicsGetFederateByName(String fedName,HelicsError err);
-		/**
+	HelicsFederate helicsGetFederateByName(String fedName,HelicsError err);
+	/**
  * Disconnect a broker.
  *
  * @param broker The broker to disconnect.
@@ -500,33 +451,33 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsBrokerDisconnect(HelicsBroker broker,HelicsError err);
-		/**
+	void helicsBrokerDisconnect(HelicsBroker broker,HelicsError err);
+	/**
  * Disconnect and free a federate.
  */
 		
-		void helicsFederateDestroy(HelicsFederate fed);
-		/**
+	void helicsFederateDestroy(HelicsFederate fed);
+	/**
  * Disconnect and free a broker.
  */
 		
-		void helicsBrokerDestroy(HelicsBroker broker);
-		/**
+	void helicsBrokerDestroy(HelicsBroker broker);
+	/**
  * Disconnect and free a core.
  */
 		
-		void helicsCoreDestroy(HelicsCore core);
-		/**
+	void helicsCoreDestroy(HelicsCore core);
+	/**
  * Release the memory associated with a core.
  */
 		
-		void helicsCoreFree(HelicsCore core);
-		/**
+	void helicsCoreFree(HelicsCore core);
+	/**
  * Release the memory associated with a broker.
  */
 		
-		void helicsBrokerFree(HelicsBroker broker);
-		/**
+	void helicsBrokerFree(HelicsBroker broker);
+	/**
  * Create a value federate from a federate info object.
  *
  * @details HelicsFederate objects can be used in all functions that take a HelicsFederate or HelicsFederate object as an argument.
@@ -540,8 +491,8 @@ and federates that were created through the current library instance.*/
  * @return An opaque value federate object.
  */
 		
-		HelicsFederate helicsCreateValueFederate(String fedName,HelicsFederateInfo fi,HelicsError err);
-		/**
+	HelicsFederate helicsCreateValueFederate(String fedName,HelicsFederateInfo fi,HelicsError err);
+	/**
  * Create a value federate from a JSON file, JSON string, or TOML file.
  *
  * @details HelicsFederate objects can be used in all functions that take a HelicsFederate or HelicsFederate object as an argument.
@@ -554,8 +505,8 @@ and federates that were created through the current library instance.*/
  * @return An opaque value federate object.
  */
 		
-		HelicsFederate helicsCreateValueFederateFromConfig(String configFile,HelicsError err);
-		/**
+	HelicsFederate helicsCreateValueFederateFromConfig(String configFile,HelicsError err);
+	/**
  * Create a message federate from a federate info object.
  *
  * @details helics_message_federate objects can be used in all functions that take a helics_message_federate or HelicsFederate object as an
@@ -570,8 +521,8 @@ and federates that were created through the current library instance.*/
  * @return An opaque message federate object.
  */
 		
-		HelicsFederate helicsCreateMessageFederate(String fedName,HelicsFederateInfo fi,HelicsError err);
-		/**
+	HelicsFederate helicsCreateMessageFederate(String fedName,HelicsFederateInfo fi,HelicsError err);
+	/**
  * Create a message federate from a JSON file or JSON string or TOML file.
  *
  * @details helics_message_federate objects can be used in all functions that take a helics_message_federate or HelicsFederate object as an
@@ -585,8 +536,8 @@ and federates that were created through the current library instance.*/
  * @return An opaque message federate object.
  */
 		
-		HelicsFederate helicsCreateMessageFederateFromConfig(String configFile,HelicsError err);
-		/**
+	HelicsFederate helicsCreateMessageFederateFromConfig(String configFile,HelicsError err);
+	/**
  * Create a combination federate from a federate info object.
  *
  * @details Combination federates are both value federates and message federates, objects can be used in all functions
@@ -601,8 +552,8 @@ and federates that were created through the current library instance.*/
  * @return An opaque value federate object nullptr if the object creation failed.
  */
 		
-		HelicsFederate helicsCreateCombinationFederate(String fedName,HelicsFederateInfo fi,HelicsError err);
-		/**
+	HelicsFederate helicsCreateCombinationFederate(String fedName,HelicsFederateInfo fi,HelicsError err);
+	/**
  * Create a combination federate from a JSON file or JSON string or TOML file.
  *
  * @details Combination federates are both value federates and message federates, objects can be used in all functions
@@ -616,8 +567,8 @@ and federates that were created through the current library instance.*/
  * @return An opaque combination federate object.
  */
 		
-		HelicsFederate helicsCreateCombinationFederateFromConfig(String configFile,HelicsError err);
-		/**
+	HelicsFederate helicsCreateCombinationFederateFromConfig(String configFile,HelicsError err);
+	/**
  * Create a new reference to an existing federate.
  *
  * @details This will create a new HelicsFederate object that references the existing federate. The new object must be freed as well.
@@ -630,8 +581,8 @@ and federates that were created through the current library instance.*/
  * @return A new reference to the same federate.
  */
 		
-		HelicsFederate helicsFederateClone(HelicsFederate fed,HelicsError err);
-		/**
+	HelicsFederate helicsFederateClone(HelicsFederate fed,HelicsError err);
+	/**
  * Protect a federate from finalizing and closing if all references go out of scope
  *
  * @details this function allows a federate to be retrieved on demand, it must be explicitly close later otherwise it will be destroyed
@@ -643,8 +594,8 @@ and federates that were created through the current library instance.*/
  occurred during the execution of the function, in particular if no federate with the given name exists
  */
 		
-		void helicsFederateProtect(String fedName,HelicsError err);
-		/**
+	void helicsFederateProtect(String fedName,HelicsError err);
+	/**
  * remove the protection of an existing federate
  *
  * @details this function allows a federate to be retrieved on demand, it must be explicitly close
@@ -656,8 +607,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if the federate was not found.
  */
 		
-		void helicsFederateUnProtect(String fedName,HelicsError err);
-		/**
+	void helicsFederateUnProtect(String fedName,HelicsError err);
+	/**
  * checks if an existing federate is protected
  *
  *
@@ -666,15 +617,15 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if the federate was not found.
  */
 		
-		int helicsFederateIsProtected(String fedName,HelicsError err);
-		/**
+	int helicsFederateIsProtected(String fedName,HelicsError err);
+	/**
  * Create a federate info object for specifying federate information when constructing a federate.
  *
  * @return A HelicsFederateInfo object which is a reference to the created object.
  */
 		
-		HelicsFederateInfo helicsCreateFederateInfo();
-		/**
+	HelicsFederateInfo helicsCreateFederateInfo();
+	/**
  * Create a federate info object from an existing one and clone the information.
  *
  * @param fi A federateInfo object to duplicate.
@@ -685,8 +636,8 @@ and federates that were created through the current library instance.*/
  *  @return A HelicsFederateInfo object which is a reference to the created object.
  */
 		
-		HelicsFederateInfo helicsFederateInfoClone(HelicsFederateInfo fi,HelicsError err);
-		/**
+	HelicsFederateInfo helicsFederateInfoClone(HelicsFederateInfo fi,HelicsError err);
+	/**
  * Load federate info from command line arguments contained in a string.
  *
  * @param fi A federateInfo object.
@@ -696,20 +647,20 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoLoadFromString(HelicsFederateInfo fi,String args,HelicsError err);
-		/**
+	void helicsFederateInfoLoadFromString(HelicsFederateInfo fi,String args,HelicsError err);
+	/**
  * Delete the memory associated with a federate info object.
  */
 		
-		void helicsFederateInfoFree(HelicsFederateInfo fi);
-		/**
+	void helicsFederateInfoFree(HelicsFederateInfo fi);
+	/**
  * Check if a federate_object is valid.
  *
  * @return HELICS_TRUE if the federate is a valid active federate, HELICS_FALSE otherwise
  */
 		
-		int helicsFederateIsValid(HelicsFederate fed);
-		/**
+	int helicsFederateIsValid(HelicsFederate fed);
+	/**
  * Set the name of the core to link to for a federate.
  *
  * @param fi The federate info object to alter.
@@ -719,8 +670,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetCoreName(HelicsFederateInfo fi,String corename,HelicsError err);
-		/**
+	void helicsFederateInfoSetCoreName(HelicsFederateInfo fi,String corename,HelicsError err);
+	/**
  * Set the initialization string for the core usually in the form of command line arguments.
  *
  * @param fi The federate info object to alter.
@@ -730,8 +681,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetCoreInitString(HelicsFederateInfo fi,String coreInit,HelicsError err);
-		/**
+	void helicsFederateInfoSetCoreInitString(HelicsFederateInfo fi,String coreInit,HelicsError err);
+	/**
  * Set the initialization string that a core will pass to a generated broker usually in the form of command line arguments.
  *
  * @param fi The federate info object to alter.
@@ -741,8 +692,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetBrokerInitString(HelicsFederateInfo fi,String brokerInit,HelicsError err);
-		/**
+	void helicsFederateInfoSetBrokerInitString(HelicsFederateInfo fi,String brokerInit,HelicsError err);
+	/**
  * Set the core type by integer code.
  *
  * @details Valid values available by definitions in api-data.h.
@@ -753,8 +704,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetCoreType(HelicsFederateInfo fi,int coretype,HelicsError err);
-		/**
+	void helicsFederateInfoSetCoreType(HelicsFederateInfo fi,int coretype,HelicsError err);
+	/**
  * Set the core type from a string.
  *
  * @param fi The federate info object to alter.
@@ -764,8 +715,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetCoreTypeFromString(HelicsFederateInfo fi,String coretype,HelicsError err);
-		/**
+	void helicsFederateInfoSetCoreTypeFromString(HelicsFederateInfo fi,String coretype,HelicsError err);
+	/**
  * Set the name or connection information for a broker.
  *
  * @details This is only used if the core is automatically created, the broker information will be transferred to the core for connection.
@@ -776,8 +727,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetBroker(HelicsFederateInfo fi,String broker,HelicsError err);
-		/**
+	void helicsFederateInfoSetBroker(HelicsFederateInfo fi,String broker,HelicsError err);
+	/**
  * Set the key for a broker connection.
  *
  * @details This is only used if the core is automatically created, the broker information will be transferred to the core for connection.
@@ -788,8 +739,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetBrokerKey(HelicsFederateInfo fi,String brokerkey,HelicsError err);
-		/**
+	void helicsFederateInfoSetBrokerKey(HelicsFederateInfo fi,String brokerkey,HelicsError err);
+	/**
  * Set the port to use for the broker.
  *
  * @details This is only used if the core is automatically created, the broker information will be transferred to the core for connection.
@@ -801,8 +752,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetBrokerPort(HelicsFederateInfo fi,int brokerPort,HelicsError err);
-		/**
+	void helicsFederateInfoSetBrokerPort(HelicsFederateInfo fi,int brokerPort,HelicsError err);
+	/**
  * Set the local port to use.
  *
  * @details This is only used if the core is automatically created, the port information will be transferred to the core for connection.
@@ -813,23 +764,23 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederateInfoSetLocalPort(HelicsFederateInfo fi,String localPort,HelicsError err);
-		/**
+	void helicsFederateInfoSetLocalPort(HelicsFederateInfo fi,String localPort,HelicsError err);
+	/**
  * Get a property index for use in /ref helicsFederateInfoSetFlagOption, /ref helicsFederateInfoSetTimeProperty,
  * or /ref helicsFederateInfoSetIntegerProperty
  * @param val A string with the property name.
  * @return An int with the property code or (-1) if not a valid property.
  */
 		
-		int helicsGetPropertyIndex(String val);
-		/**
+	int helicsGetPropertyIndex(String val);
+	/**
  * Get a property index for use in /ref helicsFederateInfoSetFlagOption, /ref helicsFederateSetFlagOption,
  * @param val A string with the option name.
  * @return An int with the property code or (-1) if not a valid property.
  */
 		
-		int helicsGetFlagIndex(String val);
-		/**
+	int helicsGetFlagIndex(String val);
+	/**
  * Get an option index for use in /ref helicsPublicationSetOption, /ref helicsInputSetOption, /ref helicsEndpointSetOption,
  * /ref helicsFilterSetOption, and the corresponding get functions.
  *
@@ -838,8 +789,8 @@ and federates that were created through the current library instance.*/
  * @return An int with the option index or (-1) if not a valid property.
  */
 		
-		int helicsGetOptionIndex(String val);
-		/**
+	int helicsGetOptionIndex(String val);
+	/**
  * Get an option value for use in /ref helicsPublicationSetOption, /ref helicsInputSetOption, /ref helicsEndpointSetOption,
  * /ref helicsFilterSetOption.
  *
@@ -848,8 +799,8 @@ and federates that were created through the current library instance.*/
  * @return An int with the option value or (-1) if not a valid value.
  */
 		
-		int helicsGetOptionValue(String val);
-		/**
+	int helicsGetOptionValue(String val);
+	/**
  * Get the data type for use in /ref helicsFederateRegisterPublication, /ref helicsFederateRegisterInput,
  * /ref helicsFilterSetOption.
  *
@@ -858,8 +809,8 @@ and federates that were created through the current library instance.*/
  * @return An int with the data type or HELICS_DATA_TYPE_UNKNOWN(-1) if not a valid value.
  */
 		
-		int helicsGetDataType(String val);
-		/**
+	int helicsGetDataType(String val);
+	/**
  * Set a flag in the info structure.
  *
  * @details Valid flags are available /ref helics_federate_flags.
@@ -870,8 +821,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateInfoSetFlagOption(HelicsFederateInfo fi,int flag,int value,HelicsError err);
-		/**
+	void helicsFederateInfoSetFlagOption(HelicsFederateInfo fi,int flag,int value,HelicsError err);
+	/**
  * Set the separator character in the info structure.
  *
  * @details The separator character is the separation character for local publications/endpoints in creating their global name.
@@ -882,8 +833,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateInfoSetSeparator(HelicsFederateInfo fi,char separator,HelicsError err);
-		/**
+	void helicsFederateInfoSetSeparator(HelicsFederateInfo fi,char separator,HelicsError err);
+	/**
  * Set the output delay for a federate.
  *
  * @param fi The federate info object to alter.
@@ -893,8 +844,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateInfoSetTimeProperty(HelicsFederateInfo fi,int timeProperty,double propertyValue,HelicsError err);
-		/**
+	void helicsFederateInfoSetTimeProperty(HelicsFederateInfo fi,int timeProperty,double propertyValue,HelicsError err);
+	/**
  * Set an integer property for a federate.
  *
  * @details Set known properties.
@@ -906,8 +857,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateInfoSetIntegerProperty(HelicsFederateInfo fi,int intProperty,int propertyValue,HelicsError err);
-		/**
+	void helicsFederateInfoSetIntegerProperty(HelicsFederateInfo fi,int intProperty,int propertyValue,HelicsError err);
+	/**
  * Load interfaces from a file.
  *
  * @param fed The federate to which to load interfaces.
@@ -916,8 +867,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateRegisterInterfaces(HelicsFederate fed,String file,HelicsError err);
-		/**
+	void helicsFederateRegisterInterfaces(HelicsFederate fed,String file,HelicsError err);
+	/**
  * Generate a global error from a federate.
  *
  * @details A global error halts the co-simulation completely.
@@ -928,8 +879,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateGlobalError(HelicsFederate fed,int errorCode,String errorString,HelicsError err);
-		/**
+	void helicsFederateGlobalError(HelicsFederate fed,int errorCode,String errorString,HelicsError err);
+	/**
  * Generate a local error in a federate.
  *
  * @details This will propagate through the co-simulation but not necessarily halt the co-simulation, it has a similar effect to finalize
@@ -940,44 +891,44 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateLocalError(HelicsFederate fed,int errorCode,String errorString,HelicsError err);
-		/**
+	void helicsFederateLocalError(HelicsFederate fed,int errorCode,String errorString,HelicsError err);
+	/**
  * Disconnect/finalize the federate. This function halts all communication in the federate and disconnects it from the core.
  */
 		
-		void helicsFederateFinalize(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateFinalize(HelicsFederate fed,HelicsError err);
+	/**
  * Disconnect/finalize the federate in an async call.
  */
 		
-		void helicsFederateFinalizeAsync(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateFinalizeAsync(HelicsFederate fed,HelicsError err);
+	/**
  * Complete the asynchronous disconnect/finalize call.
  */
 		
-		void helicsFederateFinalizeComplete(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateFinalizeComplete(HelicsFederate fed,HelicsError err);
+	/**
  * Disconnect/finalize the federate. This function halts all communication in the federate and disconnects it
  * from the core.  This call is identical to helicsFederateFinalize.
  */
 		
-		void helicsFederateDisconnect(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateDisconnect(HelicsFederate fed,HelicsError err);
+	/**
  * Disconnect/finalize the federate in an async call.  This call is identical to helicsFederateFinalizeAsync.
  */
 		
-		void helicsFederateDisconnectAsync(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateDisconnectAsync(HelicsFederate fed,HelicsError err);
+	/**
  * Complete the asynchronous disconnect/finalize call.  This call is identical to helicsFederateFinalizeComplete
  */
 		
-		void helicsFederateDisconnectComplete(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateDisconnectComplete(HelicsFederate fed,HelicsError err);
+	/**
  * Release the memory associated with a federate.
  */
 		
-		void helicsFederateFree(HelicsFederate fed);
-		/**
+	void helicsFederateFree(HelicsFederate fed);
+	/**
  * Enter the initialization state of a federate.
  *
  * @details The initialization state allows initial values to be set and received if the iteration is requested on entry to the execution
@@ -988,8 +939,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateEnterInitializingMode(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateEnterInitializingMode(HelicsFederate fed,HelicsError err);
+	/**
  * Non blocking alternative to \ref helicsFederateEnterInitializingMode.
  *
  * @details The function helicsFederateEnterInitializationModeFinalize must be called to finish the operation.
@@ -999,8 +950,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateEnterInitializingModeAsync(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateEnterInitializingModeAsync(HelicsFederate fed,HelicsError err);
+	/**
  * Check if the current Asynchronous operation has completed.
  *
  * @param fed The federate to operate on.
@@ -1010,8 +961,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_FALSE if not completed, HELICS_TRUE if completed.
  */
 		
-		int helicsFederateIsAsyncOperationCompleted(HelicsFederate fed,HelicsError err);
-		/**
+	int helicsFederateIsAsyncOperationCompleted(HelicsFederate fed,HelicsError err);
+	/**
  * Finalize the entry to initialize mode that was initiated with /ref heliceEnterInitializingModeAsync.
  *
  * @param fed The federate desiring to complete the initialization step.
@@ -1019,8 +970,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateEnterInitializingModeComplete(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateEnterInitializingModeComplete(HelicsFederate fed,HelicsError err);
+	/**
  * Request that the federate enter the Execution mode.
  *
  * @details This call is blocking until granted entry by the core object. On return from this call the federate will be at time 0.
@@ -1031,8 +982,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateEnterExecutingMode(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateEnterExecutingMode(HelicsFederate fed,HelicsError err);
+	/**
  * Request that the federate enter the Execution mode.
  *
  * @details This call is non-blocking and will return immediately. Call /ref helicsFederateEnterExecutingModeComplete to finish the call
@@ -1043,8 +994,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateEnterExecutingModeAsync(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateEnterExecutingModeAsync(HelicsFederate fed,HelicsError err);
+	/**
  * Complete the call to /ref helicsFederateEnterExecutingModeAsync.
  *
  * @param fed The federate object to complete the call.
@@ -1052,8 +1003,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateEnterExecutingModeComplete(HelicsFederate fed,HelicsError err);
-		/**
+	void helicsFederateEnterExecutingModeComplete(HelicsFederate fed,HelicsError err);
+	/**
  * Request an iterative time.
  *
  * @details This call allows for finer grain control of the iterative process than /ref helicsFederateRequestTime. It takes a time and
@@ -1067,8 +1018,8 @@ and federates that were created through the current library instance.*/
  * @return An iteration structure with field containing the time and iteration status.
  */
 		
-		HelicsIterationResult helicsFederateEnterExecutingModeIterative(HelicsFederate fed,HelicsIterationRequest iterate,HelicsError err);
-		/**
+	HelicsIterationResult helicsFederateEnterExecutingModeIterative(HelicsFederate fed,HelicsIterationRequest iterate,HelicsError err);
+	/**
  * Request an iterative entry to the execution mode.
  *
  * @details This call allows for finer grain control of the iterative process than /ref helicsFederateRequestTime. It takes a time and
@@ -1080,8 +1031,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateEnterExecutingModeIterativeAsync(HelicsFederate fed,HelicsIterationRequest iterate,HelicsError err);
-		/**
+	void helicsFederateEnterExecutingModeIterativeAsync(HelicsFederate fed,HelicsIterationRequest iterate,HelicsError err);
+	/**
  * Complete the asynchronous iterative call into ExecutionMode.
  *
  * @param fed The federate to make the request of.
@@ -1091,8 +1042,8 @@ and federates that were created through the current library instance.*/
  * @return An iteration object containing the iteration time and iteration_status.
  */
 		
-		HelicsIterationResult helicsFederateEnterExecutingModeIterativeComplete(HelicsFederate fed,HelicsError err);
-		/**
+	HelicsIterationResult helicsFederateEnterExecutingModeIterativeComplete(HelicsFederate fed,HelicsError err);
+	/**
  * Get the current state of a federate.
  *
  * @param fed The federate to query.
@@ -1102,8 +1053,8 @@ and federates that were created through the current library instance.*/
  * @return State the resulting state if void return HELICS_OK.
  */
 		
-		HelicsFederateState helicsFederateGetState(HelicsFederate fed,HelicsError err);
-		/**
+	HelicsFederateState helicsFederateGetState(HelicsFederate fed,HelicsError err);
+	/**
  * Get the core object associated with a federate.
  *
  * @param fed A federate object.
@@ -1113,8 +1064,8 @@ and federates that were created through the current library instance.*/
  * @return A core object, nullptr if invalid.
  */
 		
-		HelicsCore helicsFederateGetCore(HelicsFederate fed,HelicsError err);
-		/**
+	HelicsCore helicsFederateGetCore(HelicsFederate fed,HelicsError err);
+	/**
  * Request the next time for federate execution.
  *
  * @param fed The federate to make the request of.
@@ -1125,8 +1076,8 @@ and federates that were created through the current library instance.*/
  * @return The time granted to the federate, will return HELICS_TIME_MAXTIME if the simulation has terminated or is invalid.
  */
 		
-		double helicsFederateRequestTime(HelicsFederate fed,double requestTime,HelicsError err);
-		/**
+	double helicsFederateRequestTime(HelicsFederate fed,double requestTime,HelicsError err);
+	/**
  * Request the next time for federate execution.
  *
  * @param fed The federate to make the request of.
@@ -1137,8 +1088,8 @@ and federates that were created through the current library instance.*/
  * @return The time granted to the federate, will return HELICS_TIME_MAXTIME if the simulation has terminated or is invalid
  */
 		
-		double helicsFederateRequestTimeAdvance(HelicsFederate fed,double timeDelta,HelicsError err);
-		/**
+	double helicsFederateRequestTimeAdvance(HelicsFederate fed,double timeDelta,HelicsError err);
+	/**
  * Request the next time step for federate execution.
  *
  * @details Feds should have setup the period or minDelta for this to work well but it will request the next time step which is the current
@@ -1151,8 +1102,8 @@ and federates that were created through the current library instance.*/
  * @return The time granted to the federate, will return HELICS_TIME_MAXTIME if the simulation has terminated or is invalid
  */
 		
-		double helicsFederateRequestNextStep(HelicsFederate fed,HelicsError err);
-		/**
+	double helicsFederateRequestNextStep(HelicsFederate fed,HelicsError err);
+	/**
  * Request an iterative time.
  *
  * @details This call allows for finer grain control of the iterative process than /ref helicsFederateRequestTime. It takes a time and and
@@ -1169,8 +1120,8 @@ and federates that were created through the current library instance.*/
  * @return The granted time, will return HELICS_TIME_MAXTIME if the simulation has terminated along with the appropriate iteration result.
  */
 		
-		double helicsFederateRequestTimeIterative(HelicsFederate fed,double requestTime,HelicsIterationRequest iterate,HelicsIterationResult outIteration,HelicsError err);
-		/**
+	double helicsFederateRequestTimeIterative(HelicsFederate fed,double requestTime,HelicsIterationRequest iterate,HelicsIterationResult outIteration,HelicsError err);
+	/**
  * Request the next time for federate execution in an asynchronous call.
  *
  * @details Call /ref helicsFederateRequestTimeComplete to finish the call.
@@ -1181,8 +1132,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateRequestTimeAsync(HelicsFederate fed,double requestTime,HelicsError err);
-		/**
+	void helicsFederateRequestTimeAsync(HelicsFederate fed,double requestTime,HelicsError err);
+	/**
  * Complete an asynchronous requestTime call.
  *
  * @param fed The federate to make the request of.
@@ -1192,8 +1143,8 @@ and federates that were created through the current library instance.*/
  * @return The time granted to the federate, will return HELICS_TIME_MAXTIME if the simulation has terminated.
  */
 		
-		double helicsFederateRequestTimeComplete(HelicsFederate fed,HelicsError err);
-		/**
+	double helicsFederateRequestTimeComplete(HelicsFederate fed,HelicsError err);
+	/**
  * Request an iterative time through an asynchronous call.
  *
  * @details This call allows for finer grain control of the iterative process than /ref helicsFederateRequestTime. It takes a time and
@@ -1206,8 +1157,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateRequestTimeIterativeAsync(HelicsFederate fed,double requestTime,HelicsIterationRequest iterate,HelicsError err);
-		/**
+	void helicsFederateRequestTimeIterativeAsync(HelicsFederate fed,double requestTime,HelicsIterationRequest iterate,HelicsError err);
+	/**
  * Complete an iterative time request asynchronous call.
  *
  * @param fed The federate to make the request of.
@@ -1218,8 +1169,8 @@ and federates that were created through the current library instance.*/
  * @return The granted time, will return HELICS_TIME_MAXTIME if the simulation has terminated.
  */
 		
-		double helicsFederateRequestTimeIterativeComplete(HelicsFederate fed,HelicsIterationResult outIterate,HelicsError err);
-		/**
+	double helicsFederateRequestTimeIterativeComplete(HelicsFederate fed,HelicsIterationResult outIterate,HelicsError err);
+	/**
  * Tell helics to process internal communications for a period of time.
  *
  * @param fed The federate to tell to process.
@@ -1229,8 +1180,8 @@ and federates that were created through the current library instance.*/
  *
  */
 		
-		void helicsFederateProcessCommunications(HelicsFederate fed,double period,HelicsError err);
-		/**
+	void helicsFederateProcessCommunications(HelicsFederate fed,double period,HelicsError err);
+	/**
  * Get the name of the federate.
  *
  * @param fed The federate object to query.
@@ -1238,8 +1189,8 @@ and federates that were created through the current library instance.*/
  * @return A pointer to a string with the name.
  */
 		
-		String helicsFederateGetName(HelicsFederate fed);
-		/**
+	String helicsFederateGetName(HelicsFederate fed);
+	/**
  * Set a time based property for a federate.
  *
  * @param fed The federate object to set the property for.
@@ -1249,8 +1200,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateSetTimeProperty(HelicsFederate fed,int timeProperty,double time,HelicsError err);
-		/**
+	void helicsFederateSetTimeProperty(HelicsFederate fed,int timeProperty,double time,HelicsError err);
+	/**
  * Set a flag for the federate.
  *
  * @param fed The federate to alter a flag for.
@@ -1260,8 +1211,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateSetFlagOption(HelicsFederate fed,int flag,int flagValue,HelicsError err);
-		/**
+	void helicsFederateSetFlagOption(HelicsFederate fed,int flag,int flagValue,HelicsError err);
+	/**
  * Set the separator character in a federate.
  *
  * @details The separator character is the separation character for local publications/endpoints in creating their global name.
@@ -1273,8 +1224,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateSetSeparator(HelicsFederate fed,char separator,HelicsError err);
-		/**
+	void helicsFederateSetSeparator(HelicsFederate fed,char separator,HelicsError err);
+	/**
  * Set an integer based property of a federate.
  *
  * @param fed The federate to change the property for.
@@ -1284,8 +1235,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateSetIntegerProperty(HelicsFederate fed,int intProperty,int propertyVal,HelicsError err);
-		/**
+	void helicsFederateSetIntegerProperty(HelicsFederate fed,int intProperty,int propertyVal,HelicsError err);
+	/**
  * Get the current value of a time based property in a federate.
  *
  * @param fed The federate query.
@@ -1294,8 +1245,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		double helicsFederateGetTimeProperty(HelicsFederate fed,int timeProperty,HelicsError err);
-		/**
+	double helicsFederateGetTimeProperty(HelicsFederate fed,int timeProperty,HelicsError err);
+	/**
  * Get a flag value for a federate.
  *
  * @param fed The federate to get the flag for.
@@ -1306,8 +1257,8 @@ and federates that were created through the current library instance.*/
  * @return The value of the flag.
  */
 		
-		int helicsFederateGetFlagOption(HelicsFederate fed,int flag,HelicsError err);
-		/**
+	int helicsFederateGetFlagOption(HelicsFederate fed,int flag,HelicsError err);
+	/**
  * Get the current value of an integer property (such as a logging level).
  *
  * @param fed The federate to get the flag for.
@@ -1318,8 +1269,8 @@ and federates that were created through the current library instance.*/
  * @return The value of the property.
  */
 		
-		int helicsFederateGetIntegerProperty(HelicsFederate fed,int intProperty,HelicsError err);
-		/**
+	int helicsFederateGetIntegerProperty(HelicsFederate fed,int intProperty,HelicsError err);
+	/**
  * Get the current time of the federate.
  *
  * @param fed The federate object to query.
@@ -1329,8 +1280,8 @@ and federates that were created through the current library instance.*/
  * @return The current time of the federate.
  */
 		
-		double helicsFederateGetCurrentTime(HelicsFederate fed,HelicsError err);
-		/**
+	double helicsFederateGetCurrentTime(HelicsFederate fed,HelicsError err);
+	/**
  * Set a federation global value through a federate.
  *
  * @details This overwrites any previous value for this name.
@@ -1341,8 +1292,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateSetGlobal(HelicsFederate fed,String valueName,String value,HelicsError err);
-		/**
+	void helicsFederateSetGlobal(HelicsFederate fed,String valueName,String value,HelicsError err);
+	/**
  * Set a federate tag value.
  *
  * @details This overwrites any previous value for this tag.
@@ -1353,8 +1304,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateSetTag(HelicsFederate fed,String tagName,String value,HelicsError err);
-		/**
+	void helicsFederateSetTag(HelicsFederate fed,String tagName,String value,HelicsError err);
+	/**
  * Get a federate tag value.
  *
  * @param fed The federate to get the tag for.
@@ -1363,8 +1314,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		String helicsFederateGetTag(HelicsFederate fed,String tagName,HelicsError err);
-		/**
+	String helicsFederateGetTag(HelicsFederate fed,String tagName,HelicsError err);
+	/**
  * Add a time dependency for a federate. The federate will depend on the given named federate for time synchronization.
  *
  * @param fed The federate to add the dependency for.
@@ -1373,8 +1324,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateAddDependency(HelicsFederate fed,String fedName,HelicsError err);
-		/**
+	void helicsFederateAddDependency(HelicsFederate fed,String fedName,HelicsError err);
+	/**
  * Set the logging file for a federate (actually on the core associated with a federate).
  *
  * @param fed The federate to set the log file for.
@@ -1383,8 +1334,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateSetLogFile(HelicsFederate fed,String logFile,HelicsError err);
-		/**
+	void helicsFederateSetLogFile(HelicsFederate fed,String logFile,HelicsError err);
+	/**
  * Log an error message through a federate.
  *
  * @param fed The federate to log the error message through.
@@ -1393,8 +1344,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateLogErrorMessage(HelicsFederate fed,String logmessage,HelicsError err);
-		/**
+	void helicsFederateLogErrorMessage(HelicsFederate fed,String logmessage,HelicsError err);
+	/**
  * Log a warning message through a federate.
  *
  * @param fed The federate to log the warning message through.
@@ -1403,8 +1354,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateLogWarningMessage(HelicsFederate fed,String logmessage,HelicsError err);
-		/**
+	void helicsFederateLogWarningMessage(HelicsFederate fed,String logmessage,HelicsError err);
+	/**
  * Log an info message through a federate.
  *
  * @param fed The federate to log the info message through.
@@ -1413,8 +1364,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateLogInfoMessage(HelicsFederate fed,String logmessage,HelicsError err);
-		/**
+	void helicsFederateLogInfoMessage(HelicsFederate fed,String logmessage,HelicsError err);
+	/**
  * Log a debug message through a federate.
  *
  * @param fed The federate to log the debug message through.
@@ -1423,8 +1374,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateLogDebugMessage(HelicsFederate fed,String logmessage,HelicsError err);
-		/**
+	void helicsFederateLogDebugMessage(HelicsFederate fed,String logmessage,HelicsError err);
+	/**
  * Log a message through a federate.
  *
  * @param fed The federate to log the message through.
@@ -1434,8 +1385,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsFederateLogLevelMessage(HelicsFederate fed,int loglevel,String logmessage,HelicsError err);
-		/**
+	void helicsFederateLogLevelMessage(HelicsFederate fed,int loglevel,String logmessage,HelicsError err);
+	/**
  * Send a command to another helics object through a federate.
  *
  * @param fed The federate to send the command through.
@@ -1445,8 +1396,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsFederateSendCommand(HelicsFederate fed,String target,String command,HelicsError err);
-		/**
+	void helicsFederateSendCommand(HelicsFederate fed,String target,String command,HelicsError err);
+	/**
  * Get a command sent to the federate.
  *
  * @param fed The federate to get the command for.
@@ -1456,8 +1407,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the command for the federate, if the string is empty no command is available.
  */
 		
-		String helicsFederateGetCommand(HelicsFederate fed,HelicsError err);
-		/**
+	String helicsFederateGetCommand(HelicsFederate fed,HelicsError err);
+	/**
  * Get the source of the most recently retrieved command sent to the federate.
  *
  * @param fed The federate to get the command for.
@@ -1467,8 +1418,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the command for the federate, if the string is empty no command is available.
  */
 		
-		String helicsFederateGetCommandSource(HelicsFederate fed,HelicsError err);
-		/**
+	String helicsFederateGetCommandSource(HelicsFederate fed,HelicsError err);
+	/**
  * Get a command sent to the federate. Blocks until a command is received.
  *
  * @param fed The federate to get the command for.
@@ -1478,8 +1429,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the command for the federate, if the string is empty no command is available.
  */
 		
-		String helicsFederateWaitCommand(HelicsFederate fed,HelicsError err);
-		/**
+	String helicsFederateWaitCommand(HelicsFederate fed,HelicsError err);
+	/**
  * Set a global value in a core.
  *
  * @details This overwrites any previous value for this name.
@@ -1491,8 +1442,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsCoreSetGlobal(HelicsCore core,String valueName,String value,HelicsError err);
-		/**
+	void helicsCoreSetGlobal(HelicsCore core,String valueName,String value,HelicsError err);
+	/**
  * Set a federation global value.
  *
  * @details This overwrites any previous value for this name.
@@ -1504,8 +1455,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsBrokerSetGlobal(HelicsBroker broker,String valueName,String value,HelicsError err);
-		/**
+	void helicsBrokerSetGlobal(HelicsBroker broker,String valueName,String value,HelicsError err);
+	/**
  * Send a command to another helics object though a core using asynchronous(fast) operations.
  *
  * @param core The core to send the command through.
@@ -1515,8 +1466,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsCoreSendCommand(HelicsCore core,String target,String command,HelicsError err);
-		/**
+	void helicsCoreSendCommand(HelicsCore core,String target,String command,HelicsError err);
+	/**
  * Send a command to another helics object though a core using ordered operations.
  *
  * @param core The core to send the command through.
@@ -1526,8 +1477,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsCoreSendOrderedCommand(HelicsCore core,String target,String command,HelicsError err);
-		/**
+	void helicsCoreSendOrderedCommand(HelicsCore core,String target,String command,HelicsError err);
+	/**
  * Send a command to another helics object through a broker using asynchronous(fast) messages.
  *
  * @param broker The broker to send the command through.
@@ -1537,8 +1488,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsBrokerSendCommand(HelicsBroker broker,String target,String command,HelicsError err);
-		/**
+	void helicsBrokerSendCommand(HelicsBroker broker,String target,String command,HelicsError err);
+	/**
  * Send a command to another helics object through a broker using ordered sequencing.
  *
  * @param broker The broker to send the command through.
@@ -1548,8 +1499,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsBrokerSendOrderedCommand(HelicsBroker broker,String target,String command,HelicsError err);
-		/**
+	void helicsBrokerSendOrderedCommand(HelicsBroker broker,String target,String command,HelicsError err);
+	/**
  * Set the log file on a core.
  *
  * @param core The core to set the log file for.
@@ -1558,8 +1509,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsCoreSetLogFile(HelicsCore core,String logFileName,HelicsError err);
-		/**
+	void helicsCoreSetLogFile(HelicsCore core,String logFileName,HelicsError err);
+	/**
  * Set the log file on a broker.
  *
  * @param broker The broker to set the log file for.
@@ -1568,8 +1519,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsBrokerSetLogFile(HelicsBroker broker,String logFileName,HelicsError err);
-		/**
+	void helicsBrokerSetLogFile(HelicsBroker broker,String logFileName,HelicsError err);
+	/**
  * Set a broker time barrier.
  *
  * @param broker The broker to set the time barrier for.
@@ -1578,15 +1529,15 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsBrokerSetTimeBarrier(HelicsBroker broker,double barrierTime,HelicsError err);
-		/**
+	void helicsBrokerSetTimeBarrier(HelicsBroker broker,double barrierTime,HelicsError err);
+	/**
  * Clear any time barrier on a broker.
  *
  * @param broker The broker to clear the barriers on.
  */
 		
-		void helicsBrokerClearTimeBarrier(HelicsBroker broker);
-		/**
+	void helicsBrokerClearTimeBarrier(HelicsBroker broker);
+	/**
  * Generate a global error through a broker. This will terminate the federation.
  *
  * @param broker The broker to generate the global error on.
@@ -1596,8 +1547,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsBrokerGlobalError(HelicsBroker broker,int errorCode,String errorString,HelicsError err);
-		/**
+	void helicsBrokerGlobalError(HelicsBroker broker,int errorCode,String errorString,HelicsError err);
+	/**
  * Generate a global error through a broker. This will terminate the federation.
  *
  * @param core The core to generate the global error.
@@ -1607,8 +1558,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsCoreGlobalError(HelicsCore core,int errorCode,String errorString,HelicsError err);
-		/**
+	void helicsCoreGlobalError(HelicsCore core,int errorCode,String errorString,HelicsError err);
+	/**
  * Create a query object.
  *
  * @details A query object consists of a target and query string.
@@ -1617,8 +1568,8 @@ and federates that were created through the current library instance.*/
  * @param query The query to make of the target.
  */
 		
-		HelicsQuery helicsCreateQuery(String target,String query);
-		/**
+	HelicsQuery helicsCreateQuery(String target,String query);
+	/**
  * Execute a query.
  *
  * @details The call will block until the query finishes which may require communication or other delays.
@@ -1634,8 +1585,8 @@ and federates that were created through the current library instance.*/
  * invalid.
  */
 		
-		String helicsQueryExecute(HelicsQuery query,HelicsFederate fed,HelicsError err);
-		/**
+	String helicsQueryExecute(HelicsQuery query,HelicsFederate fed,HelicsError err);
+	/**
  * Execute a query directly on a core.
  *
  * @details The call will block until the query finishes which may require communication or other delays.
@@ -1650,8 +1601,8 @@ and federates that were created through the current library instance.*/
  * invalid.
  */
 		
-		String helicsQueryCoreExecute(HelicsQuery query,HelicsCore core,HelicsError err);
-		/**
+	String helicsQueryCoreExecute(HelicsQuery query,HelicsCore core,HelicsError err);
+	/**
  * Execute a query directly on a broker.
  *
  * @details The call will block until the query finishes which may require communication or other delays.
@@ -1666,8 +1617,8 @@ and federates that were created through the current library instance.*/
  * invalid
  */
 		
-		String helicsQueryBrokerExecute(HelicsQuery query,HelicsBroker broker,HelicsError err);
-		/**
+	String helicsQueryBrokerExecute(HelicsQuery query,HelicsBroker broker,HelicsError err);
+	/**
  * Execute a query in a non-blocking call.
  *
  * @param query The query object to use in the query.
@@ -1676,8 +1627,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsQueryExecuteAsync(HelicsQuery query,HelicsFederate fed,HelicsError err);
-		/**
+	void helicsQueryExecuteAsync(HelicsQuery query,HelicsFederate fed,HelicsError err);
+	/**
  * Complete the return from a query called with /ref helicsExecuteQueryAsync.
  *
  * @details The function will block until the query completes /ref isQueryComplete can be called to determine if a query has completed or
@@ -1691,8 +1642,8 @@ and federates that were created through the current library instance.*/
  * The return will be nullptr if query is an invalid object
  */
 		
-		String helicsQueryExecuteComplete(HelicsQuery query,HelicsError err);
-		/**
+	String helicsQueryExecuteComplete(HelicsQuery query,HelicsError err);
+	/**
  * Check if an asynchronously executed query has completed.
  *
  * @details This function should usually be called after a QueryExecuteAsync function has been called.
@@ -1703,8 +1654,8 @@ and federates that were created through the current library instance.*/
  * and false if an asynchronous query has not completed or is invalid
  */
 		
-		int helicsQueryIsCompleted(HelicsQuery query);
-		/**
+	int helicsQueryIsCompleted(HelicsQuery query);
+	/**
  * Update the target of a query.
  *
  * @param query The query object to change the target of.
@@ -1714,8 +1665,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsQuerySetTarget(HelicsQuery query,String target,HelicsError err);
-		/**
+	void helicsQuerySetTarget(HelicsQuery query,String target,HelicsError err);
+	/**
  * Update the queryString of a query.
  *
  * @param query The query object to change the target of.
@@ -1724,8 +1675,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsQuerySetQueryString(HelicsQuery query,String queryString,HelicsError err);
-		/**
+	void helicsQuerySetQueryString(HelicsQuery query,String queryString,HelicsError err);
+	/**
  * Update the ordering mode of the query, fast runs on priority channels, ordered goes on normal channels but goes in sequence
  *
  * @param query The query object to change the order for.
@@ -1735,20 +1686,20 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsQuerySetOrdering(HelicsQuery query,int mode,HelicsError err);
-		/**
+	void helicsQuerySetOrdering(HelicsQuery query,int mode,HelicsError err);
+	/**
  * Free the memory associated with a query object.
  */
 		
-		void helicsQueryFree(HelicsQuery query);
-		/**
+	void helicsQueryFree(HelicsQuery query);
+	/**
  * Function to do some housekeeping work.
  *
  * @details This runs some cleanup routines and tries to close out any residual thread that haven't been shutdown yet.
  */
 		
-		void helicsCleanupLibrary();
-		/**
+	void helicsCleanupLibrary();
+	/**
  * Create a subscription.
  *
  * @details The subscription becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1765,8 +1716,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the subscription.
  */
 		
-		HelicsInput helicsFederateRegisterSubscription(HelicsFederate fed,String key,String units,HelicsError err);
-		/**
+	HelicsInput helicsFederateRegisterSubscription(HelicsFederate fed,String key,String units,HelicsError err);
+	/**
  * Register a publication with a known type.
  *
  * @details The publication becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1783,8 +1734,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the publication.
  */
 		
-		HelicsPublication helicsFederateRegisterPublication(HelicsFederate fed,String key,int type,String units,HelicsError err);
-		/**
+	HelicsPublication helicsFederateRegisterPublication(HelicsFederate fed,String key,int type,String units,HelicsError err);
+	/**
  * Register a publication with a defined type.
  *
  * @details The publication becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1801,8 +1752,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the publication.
  */
 		
-		HelicsPublication helicsFederateRegisterTypePublication(HelicsFederate fed,String key,String type,String units,HelicsError err);
-		/**
+	HelicsPublication helicsFederateRegisterTypePublication(HelicsFederate fed,String key,String type,String units,HelicsError err);
+	/**
  * Register a global named publication with an arbitrary type.
  *
  * @details The publication becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1819,8 +1770,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the publication.
  */
 		
-		HelicsPublication helicsFederateRegisterGlobalPublication(HelicsFederate fed,String key,int type,String units,HelicsError err);
-		/**
+	HelicsPublication helicsFederateRegisterGlobalPublication(HelicsFederate fed,String key,int type,String units,HelicsError err);
+	/**
  * Register a global publication with a defined type.
  *
  * @details The publication becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1837,8 +1788,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the publication.
  */
 		
-		HelicsPublication helicsFederateRegisterGlobalTypePublication(HelicsFederate fed,String key,String type,String units,HelicsError err);
-		/**
+	HelicsPublication helicsFederateRegisterGlobalTypePublication(HelicsFederate fed,String key,String type,String units,HelicsError err);
+	/**
  * Register a named input.
  *
  * @details The input becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1855,8 +1806,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the input.
  */
 		
-		HelicsInput helicsFederateRegisterInput(HelicsFederate fed,String key,int type,String units,HelicsError err);
-		/**
+	HelicsInput helicsFederateRegisterInput(HelicsFederate fed,String key,int type,String units,HelicsError err);
+	/**
  * Register an input with a defined type.
  *
  * @details The input becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1873,8 +1824,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the publication.
  */
 		
-		HelicsInput helicsFederateRegisterTypeInput(HelicsFederate fed,String key,String type,String units,HelicsError err);
-		/**
+	HelicsInput helicsFederateRegisterTypeInput(HelicsFederate fed,String key,String type,String units,HelicsError err);
+	/**
  * Register a global named input.
  *
  * @details The publication becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1891,8 +1842,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the publication.
  */
 		
-		HelicsPublication helicsFederateRegisterGlobalInput(HelicsFederate fed,String key,int type,String units,HelicsError err);
-		/**
+	HelicsPublication helicsFederateRegisterGlobalInput(HelicsFederate fed,String key,int type,String units,HelicsError err);
+	/**
  * Register a global publication with an arbitrary type.
  *
  * @details The publication becomes part of the federate and is destroyed when the federate is freed so there are no separate free
@@ -1909,8 +1860,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the publication.
  */
 		
-		HelicsPublication helicsFederateRegisterGlobalTypeInput(HelicsFederate fed,String key,String type,String units,HelicsError err);
-		/**
+	HelicsPublication helicsFederateRegisterGlobalTypeInput(HelicsFederate fed,String key,String type,String units,HelicsError err);
+	/**
  * Get a publication object from a key.
  *
  * @param fed The value federate object to use to get the publication.
@@ -1923,8 +1874,8 @@ and federates that were created through the current library instance.*/
  * specified key exists.
  */
 		
-		HelicsPublication helicsFederateGetPublication(HelicsFederate fed,String key,HelicsError err);
-		/**
+	HelicsPublication helicsFederateGetPublication(HelicsFederate fed,String key,HelicsError err);
+	/**
  * Get a publication by its index, typically already created via registerInterfaces file or something of that nature.
  *
  * @param fed The federate object in which to create a publication.
@@ -1936,8 +1887,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsPublication.
  */
 		
-		HelicsPublication helicsFederateGetPublicationByIndex(HelicsFederate fed,int index,HelicsError err);
-		/**
+	HelicsPublication helicsFederateGetPublicationByIndex(HelicsFederate fed,int index,HelicsError err);
+	/**
  * Get an input object from a key.
  *
  * @param fed The value federate object to use to get the publication.
@@ -1950,8 +1901,8 @@ and federates that were created through the current library instance.*/
  * key exists.
  */
 		
-		HelicsInput helicsFederateGetInput(HelicsFederate fed,String key,HelicsError err);
-		/**
+	HelicsInput helicsFederateGetInput(HelicsFederate fed,String key,HelicsError err);
+	/**
  * Get an input by its index, typically already created via registerInterfaces file or something of that nature.
  *
  * @param fed The federate object in which to create a publication.
@@ -1963,8 +1914,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsInput, which will be NULL if an invalid index.
  */
 		
-		HelicsInput helicsFederateGetInputByIndex(HelicsFederate fed,int index,HelicsError err);
-		/**
+	HelicsInput helicsFederateGetInputByIndex(HelicsFederate fed,int index,HelicsError err);
+	/**
  * Get an input object from a subscription target.
  *
  * @param fed The value federate object to use to get the publication.
@@ -1977,15 +1928,15 @@ and federates that were created through the current library instance.*/
  * key exists.
  */
 		
-		HelicsInput helicsFederateGetSubscription(HelicsFederate fed,String key,HelicsError err);
-		/**
+	HelicsInput helicsFederateGetSubscription(HelicsFederate fed,String key,HelicsError err);
+	/**
  * Clear all the update flags from a federates inputs.
  *
  * @param fed The value federate object for which to clear update flags.
  */
 		
-		void helicsFederateClearUpdates(HelicsFederate fed);
-		/**
+	void helicsFederateClearUpdates(HelicsFederate fed);
+	/**
  * Register the publications via JSON publication string.
  *
  * @param fed The value federate object to use to register the publications.
@@ -1997,8 +1948,8 @@ and federates that were created through the current library instance.*/
  * @details This would be the same JSON that would be used to publish data.
  */
 		
-		void helicsFederateRegisterFromPublicationJSON(HelicsFederate fed,String json,HelicsError err);
-		/**
+	void helicsFederateRegisterFromPublicationJSON(HelicsFederate fed,String json,HelicsError err);
+	/**
  * Publish data contained in a JSON file or string.
  *
  * @param fed The value federate object through which to publish the data.
@@ -2008,8 +1959,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFederatePublishJSON(HelicsFederate fed,String json,HelicsError err);
-		/**
+	void helicsFederatePublishJSON(HelicsFederate fed,String json,HelicsError err);
+	/**
  * Check if a publication is valid.
  *
  * @param pub The publication to check.
@@ -2017,8 +1968,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the publication is a valid publication.
  */
 		
-		int helicsPublicationIsValid(HelicsPublication pub);
-		/**
+	int helicsPublicationIsValid(HelicsPublication pub);
+	/**
  * Publish a string.
  *
  * @param pub The publication to publish for.
@@ -2028,8 +1979,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationPublishString(HelicsPublication pub,String val,HelicsError err);
-		/**
+	void helicsPublicationPublishString(HelicsPublication pub,String val,HelicsError err);
+	/**
  * Publish an integer value.
  *
  * @param pub The publication to publish for.
@@ -2039,8 +1990,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationPublishInteger(HelicsPublication pub,int val,HelicsError err);
-		/**
+	void helicsPublicationPublishInteger(HelicsPublication pub,int val,HelicsError err);
+	/**
  * Publish a Boolean Value.
  *
  * @param pub The publication to publish for.
@@ -2050,8 +2001,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationPublishBoolean(HelicsPublication pub,int val,HelicsError err);
-		/**
+	void helicsPublicationPublishBoolean(HelicsPublication pub,int val,HelicsError err);
+	/**
  * Publish a double floating point value.
  *
  * @param pub The publication to publish for.
@@ -2061,8 +2012,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationPublishDouble(HelicsPublication pub,double val,HelicsError err);
-		/**
+	void helicsPublicationPublishDouble(HelicsPublication pub,double val,HelicsError err);
+	/**
  * Publish a time value.
  *
  * @param pub The publication to publish for.
@@ -2072,8 +2023,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationPublishTime(HelicsPublication pub,double val,HelicsError err);
-		/**
+	void helicsPublicationPublishTime(HelicsPublication pub,double val,HelicsError err);
+	/**
  * Publish a single character.
  *
  * @param pub The publication to publish for.
@@ -2083,8 +2034,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationPublishChar(HelicsPublication pub,char val,HelicsError err);
-		/**
+	void helicsPublicationPublishChar(HelicsPublication pub,char val,HelicsError err);
+	/**
  * Publish a complex value (or pair of values).
  *
  * @param pub The publication to publish for.
@@ -2095,8 +2046,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationPublishComplex(HelicsPublication pub,double real,double imag,HelicsError err);
-		/**
+	void helicsPublicationPublishComplex(HelicsPublication pub,double real,double imag,HelicsError err);
+	/**
  * Publish a named point.
  *
  * @param pub The publication to publish for.
@@ -2107,8 +2058,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationPublishNamedPoint(HelicsPublication pub,String field,double val,HelicsError err);
-		/**
+	void helicsPublicationPublishNamedPoint(HelicsPublication pub,String field,double val,HelicsError err);
+	/**
  * Add a named input to the list of targets a publication publishes to.
  *
  * @param pub The publication to add the target for.
@@ -2118,8 +2069,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsPublicationAddTarget(HelicsPublication pub,String target,HelicsError err);
-		/**
+	void helicsPublicationAddTarget(HelicsPublication pub,String target,HelicsError err);
+	/**
  * Check if an input is valid.
  *
  * @param ipt The input to check.
@@ -2127,8 +2078,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the Input object represents a valid input.
  */
 		
-		int helicsInputIsValid(HelicsIterationRequest ipt);
-		/**
+	int helicsInputIsValid(HelicsIterationRequest ipt);
+	/**
  * Add a publication to the list of data that an input subscribes to.
  *
  * @param ipt The named input to modify.
@@ -2138,15 +2089,15 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsInputAddTarget(HelicsIterationRequest ipt,String target,HelicsError err);
-		/**
+	void helicsInputAddTarget(HelicsIterationRequest ipt,String target,HelicsError err);
+	/**
  * Get the size of the raw value for subscription.
  *
  * @return The size of the raw data/string in bytes.
  */
 		
-		int helicsInputGetByteCount(HelicsIterationRequest ipt);
-		/**
+	int helicsInputGetByteCount(HelicsIterationRequest ipt);
+	/**
  * Get the raw data for the latest value of a subscription.
  *
  * @param ipt The input to get the data for.
@@ -2157,15 +2108,15 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsInputGetBytes(HelicsIterationRequest ipt,Pointer data,int maxDataLength,IntByReference actualSize,HelicsError err);
-		/**
+	void helicsInputGetBytes(HelicsIterationRequest ipt,Pointer data,int maxDataLength,IntByReference actualSize,HelicsError err);
+	/**
  * Get the size of a value for subscription assuming return as a string.
  *
  * @return The size of the string.
  */
 		
-		int helicsInputGetStringSize(HelicsIterationRequest ipt);
-		/**
+	int helicsInputGetStringSize(HelicsIterationRequest ipt);
+	/**
  * Get an integer value from a subscription.
  *
  * @param ipt The input to get the data for.
@@ -2175,8 +2126,8 @@ and federates that were created through the current library instance.*/
  * @return An int64_t value with the current value of the input.
  */
 		
-		int helicsInputGetInteger(HelicsIterationRequest ipt,HelicsError err);
-		/**
+	int helicsInputGetInteger(HelicsIterationRequest ipt,HelicsError err);
+	/**
  * Get a boolean value from a subscription.
  *
  * @param ipt The input to get the data for.
@@ -2186,8 +2137,8 @@ and federates that were created through the current library instance.*/
  * @return A boolean value of current input value.
  */
 		
-		int helicsInputGetBoolean(HelicsIterationRequest ipt,HelicsError err);
-		/**
+	int helicsInputGetBoolean(HelicsIterationRequest ipt,HelicsError err);
+	/**
  * Get a double value from a subscription.
  *
  * @param ipt The input to get the data for.
@@ -2197,8 +2148,8 @@ and federates that were created through the current library instance.*/
  * @return The double value of the input.
  */
 		
-		double helicsInputGetDouble(HelicsIterationRequest ipt,HelicsError err);
-		/**
+	double helicsInputGetDouble(HelicsIterationRequest ipt,HelicsError err);
+	/**
  * Get a time value from a subscription.
  *
  * @param ipt The input to get the data for.
@@ -2208,8 +2159,8 @@ and federates that were created through the current library instance.*/
  * @return The resulting time value.
  */
 		
-		double helicsInputGetTime(HelicsIterationRequest ipt,HelicsError err);
-		/**
+	double helicsInputGetTime(HelicsIterationRequest ipt,HelicsError err);
+	/**
  * Get a single character value from an input.
  *
  * @param ipt The input to get the data for.
@@ -2220,8 +2171,8 @@ and federates that were created through the current library instance.*/
  *         NAK (negative acknowledgment) symbol returned on error
  */
 		
-		char helicsInputGetChar(HelicsIterationRequest ipt,HelicsError err);
-		/**
+	char helicsInputGetChar(HelicsIterationRequest ipt,HelicsError err);
+	/**
  * Get a pair of double forming a complex number from a subscriptions.
  *
  * @param ipt The input to get the data for.
@@ -2232,15 +2183,15 @@ and federates that were created through the current library instance.*/
  * On error the values will not be altered.
  */
 		
-		void helicsInputGetComplex(HelicsIterationRequest ipt,DoubleByReference real,DoubleByReference imag,HelicsError err);
-		/**
+	void helicsInputGetComplex(HelicsIterationRequest ipt,DoubleByReference real,DoubleByReference imag,HelicsError err);
+	/**
  * Get the size of a value for subscription assuming return as an array of doubles.
  *
  * @return The number of doubles in a returned vector.
  */
 		
-		int helicsInputGetVectorSize(HelicsIterationRequest ipt);
-		/**
+	int helicsInputGetVectorSize(HelicsIterationRequest ipt);
+	/**
  * Set the default as a string.
  *
  * @param ipt The input to set the default for.
@@ -2249,8 +2200,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsInputSetDefaultString(HelicsIterationRequest ipt,String defaultString,HelicsError err);
-		/**
+	void helicsInputSetDefaultString(HelicsIterationRequest ipt,String defaultString,HelicsError err);
+	/**
  * Set the default as an integer.
  *
  * @param ipt The input to set the default for.
@@ -2259,8 +2210,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsInputSetDefaultInteger(HelicsIterationRequest ipt,int val,HelicsError err);
-		/**
+	void helicsInputSetDefaultInteger(HelicsIterationRequest ipt,int val,HelicsError err);
+	/**
  * Set the default as a boolean.
  *
  * @param ipt The input to set the default for.
@@ -2269,8 +2220,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsInputSetDefaultBoolean(HelicsIterationRequest ipt,int val,HelicsError err);
-		/**
+	void helicsInputSetDefaultBoolean(HelicsIterationRequest ipt,int val,HelicsError err);
+	/**
  * Set the default as a time.
  *
  * @param ipt The input to set the default for.
@@ -2279,8 +2230,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsInputSetDefaultTime(HelicsIterationRequest ipt,double val,HelicsError err);
-		/**
+	void helicsInputSetDefaultTime(HelicsIterationRequest ipt,double val,HelicsError err);
+	/**
  * Set the default as a char.
  *
  * @param ipt The input to set the default for.
@@ -2289,8 +2240,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsInputSetDefaultChar(HelicsIterationRequest ipt,char val,HelicsError err);
-		/**
+	void helicsInputSetDefaultChar(HelicsIterationRequest ipt,char val,HelicsError err);
+	/**
  * Set the default as a double.
  *
  * @param ipt The input to set the default for.
@@ -2299,8 +2250,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsInputSetDefaultDouble(HelicsIterationRequest ipt,double val,HelicsError err);
-		/**
+	void helicsInputSetDefaultDouble(HelicsIterationRequest ipt,double val,HelicsError err);
+	/**
  * Set the default as a complex number.
  *
  * @param ipt The input to set the default for.
@@ -2310,8 +2261,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsInputSetDefaultComplex(HelicsIterationRequest ipt,double real,double imag,HelicsError err);
-		/**
+	void helicsInputSetDefaultComplex(HelicsIterationRequest ipt,double real,double imag,HelicsError err);
+	/**
  * Set the default as a NamedPoint.
  *
  * @param ipt The input to set the default for.
@@ -2321,8 +2272,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object that will contain an error code and string if any error occurred during the execution of the function.
  */
 		
-		void helicsInputSetDefaultNamedPoint(HelicsIterationRequest ipt,String defaultName,double val,HelicsError err);
-		/**
+	void helicsInputSetDefaultNamedPoint(HelicsIterationRequest ipt,String defaultName,double val,HelicsError err);
+	/**
  * Get the type of an input.
  *
  * @param ipt The input to query.
@@ -2330,8 +2281,8 @@ and federates that were created through the current library instance.*/
  * @return A void enumeration, HELICS_OK if everything worked.
  */
 		
-		String helicsInputGetType(HelicsIterationRequest ipt);
-		/**
+	String helicsInputGetType(HelicsIterationRequest ipt);
+	/**
  * Get the type the publisher to an input is sending.
  *
  * @param ipt The input to query.
@@ -2339,8 +2290,8 @@ and federates that were created through the current library instance.*/
  * @return A const char * with the type name.
  */
 		
-		String helicsInputGetPublicationType(HelicsIterationRequest ipt);
-		/**
+	String helicsInputGetPublicationType(HelicsIterationRequest ipt);
+	/**
  * Get the type the publisher to an input is sending.
  *
  * @param ipt The input to query.
@@ -2348,8 +2299,8 @@ and federates that were created through the current library instance.*/
  * @return An int containing the enumeration value of the publication type.
  */
 		
-		int helicsInputGetPublicationDataType(HelicsIterationRequest ipt);
-		/**
+	int helicsInputGetPublicationDataType(HelicsIterationRequest ipt);
+	/**
  * Get the type of a publication.
  *
  * @param pub The publication to query.
@@ -2357,8 +2308,8 @@ and federates that were created through the current library instance.*/
  * @return A void enumeration, HELICS_OK if everything worked.
  */
 		
-		String helicsPublicationGetType(HelicsPublication pub);
-		/**
+	String helicsPublicationGetType(HelicsPublication pub);
+	/**
  * Get the key of an input.
  *
  * @param ipt The input to query.
@@ -2366,15 +2317,15 @@ and federates that were created through the current library instance.*/
  * @return A const char with the input name.
  */
 		
-		String helicsInputGetName(HelicsIterationRequest ipt);
-		/**
+	String helicsInputGetName(HelicsIterationRequest ipt);
+	/**
  * Get the target of a subscription.
  *
  * @return A const char with the subscription target.
  */
 		
-		String helicsSubscriptionGetTarget(HelicsIterationRequest ipt);
-		/**
+	String helicsSubscriptionGetTarget(HelicsIterationRequest ipt);
+	/**
  * Get the name of a publication.
  *
  * @details This will be the global key used to identify the publication to the federation.
@@ -2384,8 +2335,8 @@ and federates that were created through the current library instance.*/
  * @return A const char with the publication name.
  */
 		
-		String helicsPublicationGetName(HelicsPublication pub);
-		/**
+	String helicsPublicationGetName(HelicsPublication pub);
+	/**
  * Get the units of an input.
  *
  * @param ipt The input to query.
@@ -2393,8 +2344,8 @@ and federates that were created through the current library instance.*/
  * @return A void enumeration, HELICS_OK if everything worked.
  */
 		
-		String helicsInputGetUnits(HelicsIterationRequest ipt);
-		/**
+	String helicsInputGetUnits(HelicsIterationRequest ipt);
+	/**
  * Get the units of the publication that an input is linked to.
  *
  * @param ipt The input to query.
@@ -2402,8 +2353,8 @@ and federates that were created through the current library instance.*/
  * @return A void enumeration, HELICS_OK if everything worked.
  */
 		
-		String helicsInputGetInjectionUnits(HelicsIterationRequest ipt);
-		/**
+	String helicsInputGetInjectionUnits(HelicsIterationRequest ipt);
+	/**
  * Get the units of an input.
  *
  * @details The same as helicsInputGetUnits.
@@ -2413,8 +2364,8 @@ and federates that were created through the current library instance.*/
  * @return A void enumeration, HELICS_OK if everything worked.
  */
 		
-		String helicsInputGetExtractionUnits(HelicsIterationRequest ipt);
-		/**
+	String helicsInputGetExtractionUnits(HelicsIterationRequest ipt);
+	/**
  * Get the units of a publication.
  *
  * @param pub The publication to query.
@@ -2422,8 +2373,8 @@ and federates that were created through the current library instance.*/
  * @return A void enumeration, HELICS_OK if everything worked.
  */
 		
-		String helicsPublicationGetUnits(HelicsPublication pub);
-		/**
+	String helicsPublicationGetUnits(HelicsPublication pub);
+	/**
  * Get the data in the info field of an input.
  *
  * @param inp The input to query.
@@ -2431,8 +2382,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the info field string.
  */
 		
-		String helicsInputGetInfo(HelicsIterationRequest inp);
-		/**
+	String helicsInputGetInfo(HelicsIterationRequest inp);
+	/**
  * Set the data in the info field for an input.
  *
  * @param inp The input to query.
@@ -2441,8 +2392,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsInputSetInfo(HelicsIterationRequest inp,String info,HelicsError err);
-		/**
+	void helicsInputSetInfo(HelicsIterationRequest inp,String info,HelicsError err);
+	/**
  * Get the data in a specified tag of an input.
  *
  * @param inp The input object to query.
@@ -2450,8 +2401,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the tag data.
  */
 		
-		String helicsInputGetTag(HelicsIterationRequest inp,String tagname);
-		/**
+	String helicsInputGetTag(HelicsIterationRequest inp,String tagname);
+	/**
  * Set the data in a specific tag for an input.
  *
  * @param inp The input object to query.
@@ -2461,8 +2412,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsInputSetTag(HelicsIterationRequest inp,String tagname,String tagvalue,HelicsError err);
-		/**
+	void helicsInputSetTag(HelicsIterationRequest inp,String tagname,String tagvalue,HelicsError err);
+	/**
  * Get the data in the info field of an publication.
  *
  * @param pub The publication to query.
@@ -2470,8 +2421,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the info field string.
  */
 		
-		String helicsPublicationGetInfo(HelicsPublication pub);
-		/**
+	String helicsPublicationGetInfo(HelicsPublication pub);
+	/**
  * Set the data in the info field for a publication.
  *
  * @param pub The publication to set the info field for.
@@ -2480,8 +2431,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsPublicationSetInfo(HelicsPublication pub,String info,HelicsError err);
-		/**
+	void helicsPublicationSetInfo(HelicsPublication pub,String info,HelicsError err);
+	/**
  * Get the data in a specified tag of a publication.
  *
  * @param pub The publication object to query.
@@ -2489,8 +2440,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the tag data.
  */
 		
-		String helicsPublicationGetTag(HelicsPublication pub,String tagname);
-		/**
+	String helicsPublicationGetTag(HelicsPublication pub,String tagname);
+	/**
  * Set the data in a specific tag for a publication.
  *
  * @param pub The publication object to set a tag for.
@@ -2500,8 +2451,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsPublicationSetTag(HelicsPublication pub,String tagname,String tagvalue,HelicsError err);
-		/**
+	void helicsPublicationSetTag(HelicsPublication pub,String tagname,String tagvalue,HelicsError err);
+	/**
  * Get the current value of an input handle option
  *
  * @param inp The input to query.
@@ -2510,8 +2461,8 @@ and federates that were created through the current library instance.*/
  * @return An integer value with the current value of the given option.
  */
 		
-		int helicsInputGetOption(HelicsIterationRequest inp,int option);
-		/**
+	int helicsInputGetOption(HelicsIterationRequest inp,int option);
+	/**
  * Set an option on an input
  *
  * @param inp The input to query.
@@ -2521,8 +2472,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsInputSetOption(HelicsIterationRequest inp,int option,int value,HelicsError err);
-		/**
+	void helicsInputSetOption(HelicsIterationRequest inp,int option,int value,HelicsError err);
+	/**
  * Get the value of an option for a publication
  *
  * @param pub The publication to query.
@@ -2531,8 +2482,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the info field string.
  */
 		
-		int helicsPublicationGetOption(HelicsPublication pub,int option);
-		/**
+	int helicsPublicationGetOption(HelicsPublication pub,int option);
+	/**
  * Set the value of an option for a publication
  *
  * @param pub The publication to query.
@@ -2542,8 +2493,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsPublicationSetOption(HelicsPublication pub,int option,int val,HelicsError err);
-		/**
+	void helicsPublicationSetOption(HelicsPublication pub,int option,int val,HelicsError err);
+	/**
  * Set the minimum change detection tolerance.
  *
  * @param pub The publication to modify.
@@ -2552,8 +2503,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsPublicationSetMinimumChange(HelicsPublication pub,double tolerance,HelicsError err);
-		/**
+	void helicsPublicationSetMinimumChange(HelicsPublication pub,double tolerance,HelicsError err);
+	/**
  * Set the minimum change detection tolerance.
  *
  * @param inp The input to modify.
@@ -2562,39 +2513,39 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsInputSetMinimumChange(HelicsIterationRequest inp,double tolerance,HelicsError err);
-		/**
+	void helicsInputSetMinimumChange(HelicsIterationRequest inp,double tolerance,HelicsError err);
+	/**
  * Check if a particular subscription was updated.
  *
  * @return HELICS_TRUE if it has been updated since the last value retrieval.
  */
 		
-		int helicsInputIsUpdated(HelicsIterationRequest ipt);
-		/**
+	int helicsInputIsUpdated(HelicsIterationRequest ipt);
+	/**
  * Get the last time a subscription was updated.
  */
 		
-		double helicsInputLastUpdateTime(HelicsIterationRequest ipt);
-		/**
+	double helicsInputLastUpdateTime(HelicsIterationRequest ipt);
+	/**
  * Clear the updated flag from an input.
  */
 		
-		void helicsInputClearUpdate(HelicsIterationRequest ipt);
-		/**
+	void helicsInputClearUpdate(HelicsIterationRequest ipt);
+	/**
  * Get the number of publications in a federate.
  *
  * @return (-1) if fed was not a valid federate otherwise returns the number of publications.
  */
 		
-		int helicsFederateGetPublicationCount(HelicsFederate fed);
-		/**
+	int helicsFederateGetPublicationCount(HelicsFederate fed);
+	/**
  * Get the number of subscriptions in a federate.
  *
  * @return (-1) if fed was not a valid federate otherwise returns the number of subscriptions.
  */
 		
-		int helicsFederateGetInputCount(HelicsFederate fed);
-		/**
+	int helicsFederateGetInputCount(HelicsFederate fed);
+	/**
  * Create an endpoint.
  *
  * @details The endpoint becomes part of the federate and is destroyed when the federate is freed
@@ -2611,8 +2562,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the endpoint, or nullptr on failure.
  */
 		
-		HelicsEndpoint helicsFederateRegisterEndpoint(HelicsFederate fed,String name,String type,HelicsError err);
-		/**
+	HelicsEndpoint helicsFederateRegisterEndpoint(HelicsFederate fed,String name,String type,HelicsError err);
+	/**
  * Create an endpoint.
  *
  * @details The endpoint becomes part of the federate and is destroyed when the federate is freed
@@ -2628,8 +2579,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the endpoint, or nullptr on failure.
  */
 		
-		HelicsEndpoint helicsFederateRegisterGlobalEndpoint(HelicsFederate fed,String name,String type,HelicsError err);
-		/**
+	HelicsEndpoint helicsFederateRegisterGlobalEndpoint(HelicsFederate fed,String name,String type,HelicsError err);
+	/**
  * Create a targeted endpoint.  Targeted endpoints have specific destinations predefined and do not allow sending messages to other
  * endpoints
  *
@@ -2647,8 +2598,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the endpoint, or nullptr on failure.
  */
 		
-		HelicsEndpoint helicsFederateRegisterTargetedEndpoint(HelicsFederate fed,String name,String type,HelicsError err);
-		/**
+	HelicsEndpoint helicsFederateRegisterTargetedEndpoint(HelicsFederate fed,String name,String type,HelicsError err);
+	/**
  * Create a global targeted endpoint, Targeted endpoints have specific destinations predefined and do not allow sending messages to other
  endpoints
  *
@@ -2665,8 +2616,8 @@ and federates that were created through the current library instance.*/
  * @return An object containing the endpoint, or nullptr on failure.
  */
 		
-		HelicsEndpoint helicsFederateRegisterGlobalTargetedEndpoint(HelicsFederate fed,String name,String type,HelicsError err);
-		/**
+	HelicsEndpoint helicsFederateRegisterGlobalTargetedEndpoint(HelicsFederate fed,String name,String type,HelicsError err);
+	/**
  * Get an endpoint object from a name.
  *
  * @param fed The message federate object to use to get the endpoint.
@@ -2680,8 +2631,8 @@ and federates that were created through the current library instance.*/
  * The object will not be valid and err will contain an error code if no endpoint with the specified name exists.
  */
 		
-		HelicsEndpoint helicsFederateGetEndpoint(HelicsFederate fed,String name,HelicsError err);
-		/**
+	HelicsEndpoint helicsFederateGetEndpoint(HelicsFederate fed,String name,HelicsError err);
+	/**
  * Get an endpoint by its index, typically already created via registerInterfaces file or something of that nature.
  *
  * @param fed The federate object in which to create a publication.
@@ -2695,8 +2646,8 @@ and federates that were created through the current library instance.*/
  * The HelicsEndpoint returned will be NULL if given an invalid index.
  */
 		
-		HelicsEndpoint helicsFederateGetEndpointByIndex(HelicsFederate fed,int index,HelicsError err);
-		/**
+	HelicsEndpoint helicsFederateGetEndpointByIndex(HelicsFederate fed,int index,HelicsError err);
+	/**
  * Check if an endpoint is valid.
  *
  * @param endpoint The endpoint object to check.
@@ -2704,8 +2655,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the Endpoint object represents a valid endpoint.
  */
 		
-		int helicsEndpointIsValid(HelicsEndpoint endpoint);
-		/**
+	int helicsEndpointIsValid(HelicsEndpoint endpoint);
+	/**
  * Set the default destination for an endpoint if no other endpoint is given.
  *
  * @param endpoint The endpoint to set the destination for.
@@ -2714,8 +2665,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsEndpointSetDefaultDestination(HelicsEndpoint endpoint,String dst,HelicsError err);
-		/**
+	void helicsEndpointSetDefaultDestination(HelicsEndpoint endpoint,String dst,HelicsError err);
+	/**
  * Get the default destination for an endpoint.
  *
  * @param endpoint The endpoint to set the destination for.
@@ -2723,8 +2674,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the default destination.
  */
 		
-		String helicsEndpointGetDefaultDestination(HelicsEndpoint endpoint);
-		/**
+	String helicsEndpointGetDefaultDestination(HelicsEndpoint endpoint);
+	/**
  * Send a message object from a specific endpoint.
  *
  * @param endpoint The endpoint to send the data from.
@@ -2733,8 +2684,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsEndpointSendMessage(HelicsEndpoint endpoint,HelicsMessage message,HelicsError err);
-		/**
+	void helicsEndpointSendMessage(HelicsEndpoint endpoint,HelicsMessage message,HelicsError err);
+	/**
  * Send a message object from a specific endpoint, the message will not be copied and the message object will no longer be valid
  * after the call.
  *
@@ -2744,8 +2695,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsEndpointSendMessageZeroCopy(HelicsEndpoint endpoint,HelicsMessage message,HelicsError err);
-		/**
+	void helicsEndpointSendMessageZeroCopy(HelicsEndpoint endpoint,HelicsMessage message,HelicsError err);
+	/**
  * Subscribe an endpoint to a publication.
  *
  * @param endpoint The endpoint to use.
@@ -2754,8 +2705,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err A pointer to an error object for catching errors.
  */
 		
-		void helicsEndpointSubscribe(HelicsEndpoint endpoint,String key,HelicsError err);
-		/**
+	void helicsEndpointSubscribe(HelicsEndpoint endpoint,String key,HelicsError err);
+	/**
  * Check if the federate has any outstanding messages.
  *
  * @param fed The federate to check.
@@ -2763,8 +2714,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the federate has a message waiting, HELICS_FALSE otherwise.
  */
 		
-		int helicsFederateHasMessage(HelicsFederate fed);
-		/**
+	int helicsFederateHasMessage(HelicsFederate fed);
+	/**
  * Check if a given endpoint has any unread messages.
  *
  * @param endpoint The endpoint to check.
@@ -2772,22 +2723,22 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the endpoint has a message, HELICS_FALSE otherwise.
  */
 		
-		int helicsEndpointHasMessage(HelicsEndpoint endpoint);
-		/**
+	int helicsEndpointHasMessage(HelicsEndpoint endpoint);
+	/**
  * Returns the number of pending receives for the specified destination endpoint.
  *
  * @param fed The federate to get the number of waiting messages from.
  */
 		
-		int helicsFederatePendingMessageCount(HelicsFederate fed);
-		/**
+	int helicsFederatePendingMessageCount(HelicsFederate fed);
+	/**
  * Returns the number of pending receives for all endpoints of a particular federate.
  *
  * @param endpoint The endpoint to query.
  */
 		
-		int helicsEndpointPendingMessageCount(HelicsEndpoint endpoint);
-		/**
+	int helicsEndpointPendingMessageCount(HelicsEndpoint endpoint);
+	/**
  * Receive a packet from a particular endpoint.
  *
  * @param[in] endpoint The identifier for the endpoint.
@@ -2795,8 +2746,8 @@ and federates that were created through the current library instance.*/
  * @return A message object.
  */
 		
-		HelicsMessage helicsEndpointGetMessage(HelicsEndpoint endpoint);
-		/**
+	HelicsMessage helicsEndpointGetMessage(HelicsEndpoint endpoint);
+	/**
  * Create a new empty message object.
  *
  * @details The message is empty and isValid will return false since there is no data associated with the message yet.
@@ -2809,8 +2760,8 @@ and federates that were created through the current library instance.*/
  * @return A new HelicsMessage.
  */
 		
-		HelicsMessage helicsEndpointCreateMessage(HelicsEndpoint endpoint,HelicsError err);
-		/**
+	HelicsMessage helicsEndpointCreateMessage(HelicsEndpoint endpoint,HelicsError err);
+	/**
  * Clear all stored messages stored from an endpoint.
  *
  * @details This clears messages retrieved through helicsEndpointGetMessage or helicsEndpointCreateMessage
@@ -2818,8 +2769,8 @@ and federates that were created through the current library instance.*/
  * @param endpoint The endpoint to clear the message for.
  */
 		
-		void helicsEndpointClearMessages(HelicsEndpoint endpoint);
-		/**
+	void helicsEndpointClearMessages(HelicsEndpoint endpoint);
+	/**
  * Receive a communication message for any endpoint in the federate.
  *
  * @details The return order will be in order of endpoint creation.
@@ -2829,8 +2780,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsMessage which references the data in the message.
  */
 		
-		HelicsMessage helicsFederateGetMessage(HelicsFederate fed);
-		/**
+	HelicsMessage helicsFederateGetMessage(HelicsFederate fed);
+	/**
  * Create a new empty message object.
  *
  * @details The message is empty and isValid will return false since there is no data associated with the message yet.
@@ -2843,8 +2794,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsMessage containing the message data.
  */
 		
-		HelicsMessage helicsFederateCreateMessage(HelicsFederate fed,HelicsError err);
-		/**
+	HelicsMessage helicsFederateCreateMessage(HelicsFederate fed,HelicsError err);
+	/**
  * Clear all stored messages from a federate.
  *
  * @details This clears messages retrieved through helicsEndpointGetMessage or helicsFederateGetMessage
@@ -2852,8 +2803,8 @@ and federates that were created through the current library instance.*/
  * @param fed The federate to clear the message for.
  */
 		
-		void helicsFederateClearMessages(HelicsFederate fed);
-		/**
+	void helicsFederateClearMessages(HelicsFederate fed);
+	/**
  * Get the type specified for an endpoint.
  *
  * @param endpoint The endpoint object in question.
@@ -2861,8 +2812,8 @@ and federates that were created through the current library instance.*/
  * @return The defined type of the endpoint.
  */
 		
-		String helicsEndpointGetType(HelicsEndpoint endpoint);
-		/**
+	String helicsEndpointGetType(HelicsEndpoint endpoint);
+	/**
  * Get the name of an endpoint.
  *
  * @param endpoint The endpoint object in question.
@@ -2870,8 +2821,8 @@ and federates that were created through the current library instance.*/
  * @return The name of the endpoint.
  */
 		
-		String helicsEndpointGetName(HelicsEndpoint endpoint);
-		/**
+	String helicsEndpointGetName(HelicsEndpoint endpoint);
+	/**
  * Get the number of endpoints in a federate.
  *
  * @param fed The message federate to query.
@@ -2879,8 +2830,8 @@ and federates that were created through the current library instance.*/
  * @return (-1) if fed was not a valid federate, otherwise returns the number of endpoints.
  */
 		
-		int helicsFederateGetEndpointCount(HelicsFederate fed);
-		/**
+	int helicsFederateGetEndpointCount(HelicsFederate fed);
+	/**
  * Get the local information field of an endpoint.
  *
  * @param end The endpoint to query.
@@ -2888,8 +2839,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the info field string.
  */
 		
-		String helicsEndpointGetInfo(HelicsEndpoint end);
-		/**
+	String helicsEndpointGetInfo(HelicsEndpoint end);
+	/**
  * Set the data in the interface information field for an endpoint.
  *
  * @param endpoint The endpoint to set the information for
@@ -2899,8 +2850,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsEndpointSetInfo(HelicsEndpoint endpoint,String info,HelicsError err);
-		/**
+	void helicsEndpointSetInfo(HelicsEndpoint endpoint,String info,HelicsError err);
+	/**
  * Get the data in a specified tag of an endpoint
  *
  * @param endpoint The endpoint to query.
@@ -2908,8 +2859,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the tag data.
  */
 		
-		String helicsEndpointGetTag(HelicsEndpoint endpoint,String tagname);
-		/**
+	String helicsEndpointGetTag(HelicsEndpoint endpoint,String tagname);
+	/**
  * Set the data in a specific tag for an endpoint.
  *
  * @param endpoint The endpoint to query.
@@ -2920,8 +2871,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsEndpointSetTag(HelicsEndpoint endpoint,String tagname,String tagvalue,HelicsError err);
-		/**
+	void helicsEndpointSetTag(HelicsEndpoint endpoint,String tagname,String tagvalue,HelicsError err);
+	/**
  * Set a handle option on an endpoint.
  *
  * @param endpoint The endpoint to modify.
@@ -2932,8 +2883,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsEndpointSetOption(HelicsEndpoint endpoint,int option,int value,HelicsError err);
-		/**
+	void helicsEndpointSetOption(HelicsEndpoint endpoint,int option,int value,HelicsError err);
+	/**
  * Set a handle option on an endpoint.
  *
  * @param endpoint The endpoint to modify.
@@ -2941,8 +2892,8 @@ and federates that were created through the current library instance.*/
  * @return the value of the option, for boolean options will be 0 or 1
  */
 		
-		int helicsEndpointGetOption(HelicsEndpoint endpoint,int option);
-		/**
+	int helicsEndpointGetOption(HelicsEndpoint endpoint,int option);
+	/**
  * add a source target to an endpoint,  Specifying an endpoint to receive undirected messages from
  *
  * @param endpoint The endpoint to modify.
@@ -2952,8 +2903,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsEndpointAddSourceTarget(HelicsEndpoint endpoint,String targetEndpoint,HelicsError err);
-		/**
+	void helicsEndpointAddSourceTarget(HelicsEndpoint endpoint,String targetEndpoint,HelicsError err);
+	/**
  * add a destination target to an endpoint,  Specifying an endpoint to send undirected messages to
  *
  * @param endpoint The endpoint to modify.
@@ -2963,8 +2914,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsEndpointAddDestinationTarget(HelicsEndpoint endpoint,String targetEndpoint,HelicsError err);
-		/**
+	void helicsEndpointAddDestinationTarget(HelicsEndpoint endpoint,String targetEndpoint,HelicsError err);
+	/**
  * remove an endpoint from being targeted
  *
  * @param endpoint The endpoint to modify.
@@ -2974,8 +2925,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsEndpointRemoveTarget(HelicsEndpoint endpoint,String targetEndpoint,HelicsError err);
-		/**
+	void helicsEndpointRemoveTarget(HelicsEndpoint endpoint,String targetEndpoint,HelicsError err);
+	/**
  * add a source Filter to an endpoint
  *
  * @param endpoint The endpoint to modify.
@@ -2985,8 +2936,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsEndpointAddSourceFilter(HelicsEndpoint endpoint,String filterName,HelicsError err);
-		/**
+	void helicsEndpointAddSourceFilter(HelicsEndpoint endpoint,String filterName,HelicsError err);
+	/**
  * add a destination filter to an endpoint
  *
  * @param endpoint The endpoint to modify.
@@ -2995,8 +2946,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsEndpointAddDestinationFilter(HelicsEndpoint endpoint,String filterName,HelicsError err);
-		/**
+	void helicsEndpointAddDestinationFilter(HelicsEndpoint endpoint,String filterName,HelicsError err);
+	/**
  * Get the source endpoint of a message.
  *
  * @param message The message object in question.
@@ -3004,8 +2955,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the source endpoint.
  */
 		
-		String helicsMessageGetSource(HelicsMessage message);
-		/**
+	String helicsMessageGetSource(HelicsMessage message);
+	/**
  * Get the destination endpoint of a message.
  *
  * @param message The message object in question.
@@ -3013,8 +2964,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the destination endpoint.
  */
 		
-		String helicsMessageGetDestination(HelicsMessage message);
-		/**
+	String helicsMessageGetDestination(HelicsMessage message);
+	/**
  * Get the original source endpoint of a message, the source may have been modified by filters or other actions.
  *
  * @param message The message object in question.
@@ -3022,8 +2973,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the source of a message.
  */
 		
-		String helicsMessageGetOriginalSource(HelicsMessage message);
-		/**
+	String helicsMessageGetOriginalSource(HelicsMessage message);
+	/**
  * Get the original destination endpoint of a message, the destination may have been modified by filters or other actions.
  *
  * @param message The message object in question.
@@ -3031,8 +2982,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the original destination of a message.
  */
 		
-		String helicsMessageGetOriginalDestination(HelicsMessage message);
-		/**
+	String helicsMessageGetOriginalDestination(HelicsMessage message);
+	/**
  * Get the helics time associated with a message.
  *
  * @param message The message object in question.
@@ -3040,8 +2991,8 @@ and federates that were created through the current library instance.*/
  * @return The time associated with a message.
  */
 		
-		double helicsMessageGetTime(HelicsMessage message);
-		/**
+	double helicsMessageGetTime(HelicsMessage message);
+	/**
  * Get the payload of a message as a string.
  *
  * @param message The message object in question.
@@ -3049,8 +3000,8 @@ and federates that were created through the current library instance.*/
  * @return A string representing the payload of a message.
  */
 		
-		String helicsMessageGetString(HelicsMessage message);
-		/**
+	String helicsMessageGetString(HelicsMessage message);
+	/**
  * Get the messageID of a message.
  *
  * @param message The message object in question.
@@ -3058,8 +3009,8 @@ and federates that were created through the current library instance.*/
  * @return The messageID.
  */
 		
-		int helicsMessageGetMessageID(HelicsMessage message);
-		/**
+	int helicsMessageGetMessageID(HelicsMessage message);
+	/**
  * Check if a flag is set on a message.
  *
  * @param message The message object in question.
@@ -3068,8 +3019,8 @@ and federates that were created through the current library instance.*/
  * @return The flags associated with a message.
  */
 		
-		int helicsMessageGetFlagOption(HelicsMessage message,int flag);
-		/**
+	int helicsMessageGetFlagOption(HelicsMessage message,int flag);
+	/**
  * Get the size of the data payload in bytes.
  *
  * @param message The message object in question.
@@ -3077,8 +3028,8 @@ and federates that were created through the current library instance.*/
  * @return The size of the data payload.
  */
 		
-		int helicsMessageGetByteCount(HelicsMessage message);
-		/**
+	int helicsMessageGetByteCount(HelicsMessage message);
+	/**
  * A check if the message contains a valid payload.
  *
  * @param message The message object in question.
@@ -3086,8 +3037,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the message contains a payload.
  */
 		
-		int helicsMessageIsValid(HelicsMessage message);
-		/**
+	int helicsMessageIsValid(HelicsMessage message);
+	/**
  * Set the source of a message.
  *
  * @param message The message object in question.
@@ -3096,8 +3047,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageSetSource(HelicsMessage message,String src,HelicsError err);
-		/**
+	void helicsMessageSetSource(HelicsMessage message,String src,HelicsError err);
+	/**
  * Set the destination of a message.
  *
  * @param message The message object in question.
@@ -3106,8 +3057,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageSetDestination(HelicsMessage message,String dst,HelicsError err);
-		/**
+	void helicsMessageSetDestination(HelicsMessage message,String dst,HelicsError err);
+	/**
  * Set the original source of a message.
  *
  * @param message The message object in question.
@@ -3116,8 +3067,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageSetOriginalSource(HelicsMessage message,String src,HelicsError err);
-		/**
+	void helicsMessageSetOriginalSource(HelicsMessage message,String src,HelicsError err);
+	/**
  * Set the original destination of a message.
  *
  * @param message The message object in question.
@@ -3126,8 +3077,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageSetOriginalDestination(HelicsMessage message,String dst,HelicsError err);
-		/**
+	void helicsMessageSetOriginalDestination(HelicsMessage message,String dst,HelicsError err);
+	/**
  * Set the delivery time for a message.
  *
  * @param message The message object in question.
@@ -3136,8 +3087,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageSetTime(HelicsMessage message,double time,HelicsError err);
-		/**
+	void helicsMessageSetTime(HelicsMessage message,double time,HelicsError err);
+	/**
  * Resize the data buffer for a message.
  *
  * @details The message data buffer will be resized. There are no guarantees on what is in the buffer in newly allocated space.
@@ -3149,8 +3100,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageResize(HelicsMessage message,int newSize,HelicsError err);
-		/**
+	void helicsMessageResize(HelicsMessage message,int newSize,HelicsError err);
+	/**
  * Reserve space in a buffer but don't actually resize.
  *
  * @details The message data buffer will be reserved but not resized.
@@ -3161,8 +3112,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageReserve(HelicsMessage message,int reserveSize,HelicsError err);
-		/**
+	void helicsMessageReserve(HelicsMessage message,int reserveSize,HelicsError err);
+	/**
  * Set the message ID for the message.
  *
  * @details Normally this is not needed and the core of HELICS will adjust as needed.
@@ -3173,15 +3124,15 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageSetMessageID(HelicsMessage message,int messageID,HelicsError err);
-		/**
+	void helicsMessageSetMessageID(HelicsMessage message,int messageID,HelicsError err);
+	/**
  * Clear the flags of a message.
  *
  * @param message The message object in question
  */
 		
-		void helicsMessageClearFlags(HelicsMessage message);
-		/**
+	void helicsMessageClearFlags(HelicsMessage message);
+	/**
  * Set a flag on a message.
  *
  * @param message The message object in question.
@@ -3191,8 +3142,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageSetFlagOption(HelicsMessage message,int flag,int flagValue,HelicsError err);
-		/**
+	void helicsMessageSetFlagOption(HelicsMessage message,int flag,int flagValue,HelicsError err);
+	/**
  * Set the data payload of a message as a string.
  *
  * @param message The message object in question.
@@ -3201,8 +3152,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageSetString(HelicsMessage message,String data,HelicsError err);
-		/**
+	void helicsMessageSetString(HelicsMessage message,String data,HelicsError err);
+	/**
  * Copy a message object.
  *
  * @param src_message The message object to copy from.
@@ -3211,8 +3162,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageCopy(HelicsMessage src_message,HelicsMessage dst_message,HelicsError err);
-		/**
+	void helicsMessageCopy(HelicsMessage src_message,HelicsMessage dst_message,HelicsError err);
+	/**
  * Clone a message object.
  *
  * @param message The message object to copy from.
@@ -3220,8 +3171,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		HelicsMessage helicsMessageClone(HelicsMessage message,HelicsError err);
-		/**
+	HelicsMessage helicsMessageClone(HelicsMessage message,HelicsError err);
+	/**
  * Free a message object from memory
  * @param message The message object to copy from.
  * @details memory for message is managed so not using this function does not create memory leaks, this is an indication
@@ -3229,8 +3180,8 @@ and federates that were created through the current library instance.*/
  * helicsFederateClearMessages() can also be used to clear up all stored messages at once
  */
 		
-		void helicsMessageFree(HelicsMessage message);
-		/**
+	void helicsMessageFree(HelicsMessage message);
+	/**
  * Reset a message to empty state
  * @param message The message object to copy from.
  * @details The message after this function will be empty, with no source or destination
@@ -3238,8 +3189,8 @@ and federates that were created through the current library instance.*/
  * @param[in,out] err An error object to fill out in case of an error.
  */
 		
-		void helicsMessageClear(HelicsMessage message,HelicsError err);
-		/**
+	void helicsMessageClear(HelicsMessage message,HelicsError err);
+	/**
  * Create a source Filter on the specified federate.
  *
  * @details Filters can be created through a federate or a core, linking through a federate allows
@@ -3255,8 +3206,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsFilter object.
  */
 		
-		HelicsFilter helicsFederateRegisterFilter(HelicsFederate fed,int type,String name,HelicsError err);
-		/**
+	HelicsFilter helicsFederateRegisterFilter(HelicsFederate fed,int type,String name,HelicsError err);
+	/**
  * Create a global source filter through a federate.
  *
  * @details Filters can be created through a federate or a core, linking through a federate allows
@@ -3272,8 +3223,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsFilter object.
  */
 		
-		HelicsFilter helicsFederateRegisterGlobalFilter(HelicsFederate fed,int type,String name,HelicsError err);
-		/**
+	HelicsFilter helicsFederateRegisterGlobalFilter(HelicsFederate fed,int type,String name,HelicsError err);
+	/**
  * Create a cloning Filter on the specified federate.
  *
  * @details Cloning filters copy a message and send it to multiple locations, source and destination can be added
@@ -3288,8 +3239,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsFilter object.
  */
 		
-		HelicsFilter helicsFederateRegisterCloningFilter(HelicsFederate fed,String name,HelicsError err);
-		/**
+	HelicsFilter helicsFederateRegisterCloningFilter(HelicsFederate fed,String name,HelicsError err);
+	/**
  * Create a global cloning Filter on the specified federate.
  *
  * @details Cloning filters copy a message and send it to multiple locations, source and destination can be added
@@ -3304,8 +3255,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsFilter object.
  */
 		
-		HelicsFilter helicsFederateRegisterGlobalCloningFilter(HelicsFederate fed,String name,HelicsError err);
-		/**
+	HelicsFilter helicsFederateRegisterGlobalCloningFilter(HelicsFederate fed,String name,HelicsError err);
+	/**
  * Create a source Filter on the specified core.
  *
  * @details Filters can be created through a federate or a core, linking through a federate allows
@@ -3321,8 +3272,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsFilter object.
  */
 		
-		HelicsFilter helicsCoreRegisterFilter(HelicsCore core,int type,String name,HelicsError err);
-		/**
+	HelicsFilter helicsCoreRegisterFilter(HelicsCore core,int type,String name,HelicsError err);
+	/**
  * Create a cloning Filter on the specified core.
  *
  * @details Cloning filters copy a message and send it to multiple locations, source and destination can be added
@@ -3337,8 +3288,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsFilter object.
  */
 		
-		HelicsFilter helicsCoreRegisterCloningFilter(HelicsCore core,String name,HelicsError err);
-		/**
+	HelicsFilter helicsCoreRegisterCloningFilter(HelicsCore core,String name,HelicsError err);
+	/**
  * Get the number of filters registered through a federate.
  *
  * @param fed The federate object to use to get the filter.
@@ -3346,8 +3297,8 @@ and federates that were created through the current library instance.*/
  * @return A count of the number of filters registered through a federate.
  */
 		
-		int helicsFederateGetFilterCount(HelicsFederate fed);
-		/**
+	int helicsFederateGetFilterCount(HelicsFederate fed);
+	/**
  * Get a filter by its name, typically already created via registerInterfaces file or something of that nature.
  *
  * @param fed The federate object to use to get the filter.
@@ -3360,8 +3311,8 @@ and federates that were created through the current library instance.*/
  * exists.
  */
 		
-		HelicsFilter helicsFederateGetFilter(HelicsFederate fed,String name,HelicsError err);
-		/**
+	HelicsFilter helicsFederateGetFilter(HelicsFederate fed,String name,HelicsError err);
+	/**
  * Get a filter by its index, typically already created via registerInterfaces file or something of that nature.
  *
  * @param fed The federate object in which to create a publication.
@@ -3373,8 +3324,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsFilter, which will be NULL if an invalid index is given.
  */
 		
-		HelicsFilter helicsFederateGetFilterByIndex(HelicsFederate fed,int index,HelicsError err);
-		/**
+	HelicsFilter helicsFederateGetFilterByIndex(HelicsFederate fed,int index,HelicsError err);
+	/**
  * Check if a filter is valid.
  *
  * @param filt The filter object to check.
@@ -3382,8 +3333,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the Filter object represents a valid filter.
  */
 		
-		int helicsFilterIsValid(HelicsFilter filt);
-		/**
+	int helicsFilterIsValid(HelicsFilter filt);
+	/**
  * Get the name of the filter and store in the given string.
  *
  * @param filt The given filter.
@@ -3391,8 +3342,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the name of the filter.
  */
 		
-		String helicsFilterGetName(HelicsFilter filt);
-		/**
+	String helicsFilterGetName(HelicsFilter filt);
+	/**
  * Set a property on a filter.
  *
  * @param filt The filter to modify.
@@ -3403,8 +3354,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterSet(HelicsFilter filt,String prop,double val,HelicsError err);
-		/**
+	void helicsFilterSet(HelicsFilter filt,String prop,double val,HelicsError err);
+	/**
  * Set a string property on a filter.
  *
  * @param filt The filter to modify.
@@ -3415,8 +3366,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterSetString(HelicsFilter filt,String prop,String val,HelicsError err);
-		/**
+	void helicsFilterSetString(HelicsFilter filt,String prop,String val,HelicsError err);
+	/**
  * Add a destination target to a filter.
  *
  * @details All messages going to a destination are copied to the delivery address(es).
@@ -3427,8 +3378,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterAddDestinationTarget(HelicsFilter filt,String dst,HelicsError err);
-		/**
+	void helicsFilterAddDestinationTarget(HelicsFilter filt,String dst,HelicsError err);
+	/**
  * Add a source target to a filter.
  *
  * @details All messages coming from a source are copied to the delivery address(es).
@@ -3440,8 +3391,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterAddSourceTarget(HelicsFilter filt,String source,HelicsError err);
-		/**
+	void helicsFilterAddSourceTarget(HelicsFilter filt,String source,HelicsError err);
+	/**
  * Add a delivery endpoint to a cloning filter.
  *
  * @details All cloned messages are sent to the delivery address(es).
@@ -3453,8 +3404,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterAddDeliveryEndpoint(HelicsFilter filt,String deliveryEndpoint,HelicsError err);
-		/**
+	void helicsFilterAddDeliveryEndpoint(HelicsFilter filt,String deliveryEndpoint,HelicsError err);
+	/**
  * Remove a destination target from a filter.
  *
  * @param filt The given filter.
@@ -3465,8 +3416,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterRemoveTarget(HelicsFilter filt,String target,HelicsError err);
-		/**
+	void helicsFilterRemoveTarget(HelicsFilter filt,String target,HelicsError err);
+	/**
  * Remove a delivery destination from a cloning filter.
  *
  * @param filt The given filter (must be a cloning filter).
@@ -3476,8 +3427,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterRemoveDeliveryEndpoint(HelicsFilter filt,String deliveryEndpoint,HelicsError err);
-		/**
+	void helicsFilterRemoveDeliveryEndpoint(HelicsFilter filt,String deliveryEndpoint,HelicsError err);
+	/**
  * Get the data in the info field of a filter.
  *
  * @param filt The given filter.
@@ -3485,8 +3436,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the info field string.
  */
 		
-		String helicsFilterGetInfo(HelicsFilter filt);
-		/**
+	String helicsFilterGetInfo(HelicsFilter filt);
+	/**
  * Set the data in the info field for a filter.
  *
  * @param filt The given filter.
@@ -3496,8 +3447,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterSetInfo(HelicsFilter filt,String info,HelicsError err);
-		/**
+	void helicsFilterSetInfo(HelicsFilter filt,String info,HelicsError err);
+	/**
  * Get the data in a specified tag of a filter.
  *
  * @param filt The filter to query.
@@ -3505,8 +3456,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the tag data.
  */
 		
-		String helicsFilterGetTag(HelicsFilter filt,String tagname);
-		/**
+	String helicsFilterGetTag(HelicsFilter filt,String tagname);
+	/**
  * Set the data in a specific tag for a filter.
  *
  * @param filt The filter object to set the tag for.
@@ -3517,8 +3468,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterSetTag(HelicsFilter filt,String tagname,String tagvalue,HelicsError err);
-		/**
+	void helicsFilterSetTag(HelicsFilter filt,String tagname,String tagvalue,HelicsError err);
+	/**
  * Set an option value for a filter.
  *
  * @param filt The given filter.
@@ -3529,16 +3480,16 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsFilterSetOption(HelicsFilter filt,int option,int value,HelicsError err);
-		/**
+	void helicsFilterSetOption(HelicsFilter filt,int option,int value,HelicsError err);
+	/**
  * Get a handle option for the filter.
  *
  * @param filt The given filter to query.
  * @param option The option to query /ref helics_handle_options.
  */
 		
-		int helicsFilterGetOption(HelicsFilter filt,int option);
-		/**
+	int helicsFilterGetOption(HelicsFilter filt,int option);
+	/**
  * Create a Translator on the specified federate.
  *
  * @details Translators can be created through a federate or a core. Linking through a federate allows
@@ -3554,8 +3505,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsTranslator object.
  */
 		
-		HelicsTranslator helicsFederateRegisterTranslator(HelicsFederate fed,int type,String name,HelicsError err);
-		/**
+	HelicsTranslator helicsFederateRegisterTranslator(HelicsFederate fed,int type,String name,HelicsError err);
+	/**
  * Create a global translator through a federate.
  *
  * @details Translators can be created through a federate or a core. Linking through a federate allows
@@ -3571,8 +3522,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsTranslator object.
  */
 		
-		HelicsTranslator helicsFederateRegisterGlobalTranslator(HelicsFederate fed,int type,String name,HelicsError err);
-		/**
+	HelicsTranslator helicsFederateRegisterGlobalTranslator(HelicsFederate fed,int type,String name,HelicsError err);
+	/**
  * Create a Translator on the specified core.
  *
  * @details Translators can be created through a federate or a core. Linking through a federate allows
@@ -3588,8 +3539,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsTranslator object.
  */
 		
-		HelicsTranslator helicsCoreRegisterTranslator(HelicsCore core,int type,String name,HelicsError err);
-		/**
+	HelicsTranslator helicsCoreRegisterTranslator(HelicsCore core,int type,String name,HelicsError err);
+	/**
  * Get the number of translators registered through a federate.
  *
  * @param fed The federate object to use to get the translator.
@@ -3597,8 +3548,8 @@ and federates that were created through the current library instance.*/
  * @return A count of the number of translators registered through a federate.
  */
 		
-		int helicsFederateGetTranslatorCount(HelicsFederate fed);
-		/**
+	int helicsFederateGetTranslatorCount(HelicsFederate fed);
+	/**
  * Get a translator by its name, typically already created via registerInterfaces file or something of that nature.
  *
  * @param fed The federate object to use to get the translator.
@@ -3611,8 +3562,8 @@ and federates that were created through the current library instance.*/
  * err will contain an error code.
  */
 		
-		HelicsTranslator helicsFederateGetTranslator(HelicsFederate fed,String name,HelicsError err);
-		/**
+	HelicsTranslator helicsFederateGetTranslator(HelicsFederate fed,String name,HelicsError err);
+	/**
  * Get a translator by its index, typically already created via registerInterfaces file or something of that nature.
  *
  * @param fed The federate object in which to create a publication.
@@ -3624,8 +3575,8 @@ and federates that were created through the current library instance.*/
  * @return A HelicsTranslator, which will be NULL if an invalid index is given.
  */
 		
-		HelicsTranslator helicsFederateGetTranslatorByIndex(HelicsFederate fed,int index,HelicsError err);
-		/**
+	HelicsTranslator helicsFederateGetTranslatorByIndex(HelicsFederate fed,int index,HelicsError err);
+	/**
  * Check if a translator is valid.
  *
  * @param trans The translator object to check.
@@ -3633,8 +3584,8 @@ and federates that were created through the current library instance.*/
  * @return HELICS_TRUE if the Translator object represents a valid translator.
  */
 		
-		int helicsTranslatorIsValid(HelicsTranslator trans);
-		/**
+	int helicsTranslatorIsValid(HelicsTranslator trans);
+	/**
  * Get the name of the translator and store in the given string.
  *
  * @param trans The given translator.
@@ -3642,8 +3593,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the name of the translator.
  */
 		
-		String helicsTranslatorGetName(HelicsTranslator trans);
-		/**
+	String helicsTranslatorGetName(HelicsTranslator trans);
+	/**
  * Set a property on a translator.
  *
  * @param trans The translator to modify.
@@ -3654,8 +3605,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorSet(HelicsTranslator trans,String prop,double val,HelicsError err);
-		/**
+	void helicsTranslatorSet(HelicsTranslator trans,String prop,double val,HelicsError err);
+	/**
  * Set a string property on a translator.
  *
  * @param trans The translator to modify.
@@ -3666,8 +3617,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorSetString(HelicsTranslator trans,String prop,String val,HelicsError err);
-		/**
+	void helicsTranslatorSetString(HelicsTranslator trans,String prop,String val,HelicsError err);
+	/**
  * Add an input to send a translator output.
  *
  * @details All messages sent to a translator endpoint get translated and published to the translators target inputs.
@@ -3679,8 +3630,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorAddInputTarget(HelicsTranslator trans,String input,HelicsError err);
-		/**
+	void helicsTranslatorAddInputTarget(HelicsTranslator trans,String input,HelicsError err);
+	/**
  * Add a source publication target to a translator.
  *
  * @details When a publication publishes data the translator will receive it and convert it to a message sent to a translators destination
@@ -3694,8 +3645,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorAddPublicationTarget(HelicsTranslator trans,String pub,HelicsError err);
-		/**
+	void helicsTranslatorAddPublicationTarget(HelicsTranslator trans,String pub,HelicsError err);
+	/**
  * Add a source endpoint target to a translator.
  *
  * @details The translator will "translate" all message sent to it.  This method adds an endpoint which can send the translator data.
@@ -3707,8 +3658,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorAddSourceEndpoint(HelicsTranslator trans,String ept,HelicsError err);
-		/**
+	void helicsTranslatorAddSourceEndpoint(HelicsTranslator trans,String ept,HelicsError err);
+	/**
  * Add a destination target endpoint to a translator.
  *
  * @details The translator will "translate" all message sent to it.  This method adds an endpoint which will receive data published to the
@@ -3721,8 +3672,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorAddDestinationEndpoint(HelicsTranslator trans,String ept,HelicsError err);
-		/**
+	void helicsTranslatorAddDestinationEndpoint(HelicsTranslator trans,String ept,HelicsError err);
+	/**
  * Remove a target from a translator.
  *
  * @param trans The given translator.
@@ -3733,8 +3684,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorRemoveTarget(HelicsTranslator trans,String target,HelicsError err);
-		/**
+	void helicsTranslatorRemoveTarget(HelicsTranslator trans,String target,HelicsError err);
+	/**
  * Get the data in the info field of a translator.
  *
  * @param trans The given translator.
@@ -3742,8 +3693,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the info field string.
  */
 		
-		String helicsTranslatorGetInfo(HelicsTranslator trans);
-		/**
+	String helicsTranslatorGetInfo(HelicsTranslator trans);
+	/**
  * Set the data in the info field for a translator.
  *
  * @param trans The given translator.
@@ -3753,8 +3704,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorSetInfo(HelicsTranslator trans,String info,HelicsError err);
-		/**
+	void helicsTranslatorSetInfo(HelicsTranslator trans,String info,HelicsError err);
+	/**
  * Get the data in a specified tag of a translator.
  *
  * @param trans The translator to query.
@@ -3762,8 +3713,8 @@ and federates that were created through the current library instance.*/
  * @return A string with the tag data.
  */
 		
-		String helicsTranslatorGetTag(HelicsTranslator trans,String tagname);
-		/**
+	String helicsTranslatorGetTag(HelicsTranslator trans,String tagname);
+	/**
  * Set the data in a specific tag for a translator.
  *
  * @param trans The translator object to set the tag for.
@@ -3774,8 +3725,8 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorSetTag(HelicsTranslator trans,String tagname,String tagvalue,HelicsError err);
-		/**
+	void helicsTranslatorSetTag(HelicsTranslator trans,String tagname,String tagvalue,HelicsError err);
+	/**
  * Set an option value for a translator.
  *
  * @param trans The given translator.
@@ -3786,16 +3737,16 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsTranslatorSetOption(HelicsTranslator trans,int option,int value,HelicsError err);
-		/**
+	void helicsTranslatorSetOption(HelicsTranslator trans,int option,int value,HelicsError err);
+	/**
  * Get a handle option for the translator.
  *
  * @param trans The given translator to query.
  * @param option The option to query /ref helics_handle_options.
  */
 		
-		int helicsTranslatorGetOption(HelicsTranslator trans,int option);
-		/**
+	int helicsTranslatorGetOption(HelicsTranslator trans,int option);
+	/**
  * Set the data for a query callback.
  *
  * @details There are many queries that HELICS understands directly, but it is occasionally useful to have a federate be able to respond
@@ -3809,6 +3760,5 @@ and federates that were created through the current library instance.*/
 
  */
 		
-		void helicsQueryBufferFill(HelicsQueryBuffer buffer,String queryResult,int strSize,HelicsError err);
+	void helicsQueryBufferFill(HelicsQueryBuffer buffer,String queryResult,int strSize,HelicsError err);
 	}
-}

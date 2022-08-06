@@ -1,4 +1,4 @@
-2022-08-06 13:48:07,716 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java Macro style definition for:
+2022-08-06 17:33:15,223 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java Macro style definition for:
 {
     "brief_comment": null,
     "end_line": 120,
@@ -10,7 +10,7 @@
     "type": "Invalid",
     "value": "HELICS_DATA_TYPE_STRING"
 }
-2022-08-06 13:48:07,717 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java Macro style definition for:
+2022-08-06 17:33:15,223 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java Macro style definition for:
 {
     "brief_comment": null,
     "end_line": 418,
@@ -22,7 +22,7 @@
     "type": "Invalid",
     "value": 9223372036.854774
 }
-2022-08-06 13:48:07,718 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,224 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "pick a core type depending on compile configuration usually either ZMQ if available or TCP",
     "end_line": 86,
@@ -211,7 +211,7 @@
     "start_line": 48,
     "type": "Enum"
 }
-2022-08-06 13:48:07,718 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,225 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of allowable data types for publications and inputs",
     "end_line": 117,
@@ -378,7 +378,7 @@
     "start_line": 89,
     "type": "Enum"
 }
-2022-08-06 13:48:07,719 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,225 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of possible federate flags",
     "end_line": 167,
@@ -578,7 +578,7 @@
     "start_line": 123,
     "type": "Enum"
 }
-2022-08-06 13:48:07,719 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,225 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of additional core flags",
     "end_line": 177,
@@ -624,7 +624,7 @@
     "start_line": 170,
     "type": "Enum"
 }
-2022-08-06 13:48:07,720 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,226 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of general flags that can be used in federates/cores/brokers",
     "end_line": 199,
@@ -714,7 +714,7 @@
     "start_line": 180,
     "type": "Enum"
 }
-2022-08-06 13:48:07,721 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,226 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "log level definitions",
     "end_line": 229,
@@ -859,7 +859,7 @@
     "start_line": 203,
     "type": "Enum"
 }
-2022-08-06 13:48:07,722 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,227 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of return values from the C interface functions",
     "end_line": 270,
@@ -1070,7 +1070,7 @@
     "start_line": 233,
     "type": "Enum"
 }
-2022-08-06 13:48:07,723 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,227 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": null,
     "end_line": 272,
@@ -1082,7 +1082,7 @@
     "type": "Int",
     "value": -101
 }
-2022-08-06 13:48:07,723 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,227 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of properties that apply to federates and sometimes cores",
     "end_line": 310,
@@ -1249,7 +1249,7 @@
     "start_line": 275,
     "type": "Enum"
 }
-2022-08-06 13:48:07,724 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,228 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": "result returned for requesting the value of an invalid/unknown property",
     "end_line": 313,
@@ -1261,7 +1261,7 @@
     "type": "Int",
     "value": -972
 }
-2022-08-06 13:48:07,724 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,228 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of the multi_input operations",
     "end_line": 336,
@@ -1373,7 +1373,7 @@
     "start_line": 316,
     "type": "Enum"
 }
-2022-08-06 13:48:07,725 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,228 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of options that apply to handles",
     "end_line": 371,
@@ -1540,7 +1540,7 @@
     "start_line": 339,
     "type": "Enum"
 }
-2022-08-06 13:48:07,726 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,229 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of the predefined filter types",
     "end_line": 391,
@@ -1630,7 +1630,7 @@
     "start_line": 374,
     "type": "Enum"
 }
-2022-08-06 13:48:07,727 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,229 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of the predefined translator types",
     "end_line": 402,
@@ -1676,7 +1676,7 @@
     "start_line": 394,
     "type": "Enum"
 }
-2022-08-06 13:48:07,727 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,230 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of sequencing modes for queries and commands fast is the default, meaning the query travels along priority channels and takes precedence of over existing messages; ordered means it follows normal priority patterns and will be ordered along with existing messages",
     "end_line": 416,
@@ -1722,7 +1722,7 @@
     "start_line": 409,
     "type": "Enum"
 }
-2022-08-06 13:48:07,728 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,230 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": null,
     "end_line": 419,
@@ -1734,7 +1734,7 @@
     "type": "Double",
     "value": "HELICS_BIG_NUMBER"
 }
-2022-08-06 13:48:07,728 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,230 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": "opaque object representing an input",
     "end_line": 429,
@@ -1745,7 +1745,7 @@
     "start_line": 429,
     "type": "void *"
 }
-2022-08-06 13:48:07,728 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,230 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": "opaque object representing a publication",
     "end_line": 434,
@@ -1756,7 +1756,7 @@
     "start_line": 434,
     "type": "void *"
 }
-2022-08-06 13:48:07,728 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,230 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 440,
@@ -1767,7 +1767,7 @@
     "start_line": 440,
     "type": "void *"
 }
-2022-08-06 13:48:07,728 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,231 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 446,
@@ -1778,7 +1778,7 @@
     "start_line": 446,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,231 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": "opaque object representing a translator",
     "end_line": 451,
@@ -1789,7 +1789,7 @@
     "start_line": 451,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,232 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 457,
@@ -1800,7 +1800,7 @@
     "start_line": 457,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,232 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 463,
@@ -1811,7 +1811,7 @@
     "start_line": 463,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,232 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 468,
@@ -1822,7 +1822,7 @@
     "start_line": 468,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,232 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 474,
@@ -1833,7 +1833,7 @@
     "start_line": 474,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,232 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 480,
@@ -1844,7 +1844,7 @@
     "start_line": 480,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,234 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": "opaque object representing a data buffer in HELICS",
     "end_line": 485,
@@ -1855,7 +1855,7 @@
     "start_line": 485,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,234 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 491,
@@ -1866,7 +1866,7 @@
     "start_line": 491,
     "type": "void *"
 }
-2022-08-06 13:48:07,729 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,234 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 497,
@@ -1877,7 +1877,7 @@
     "start_line": 497,
     "type": "void *"
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 503,
@@ -1888,7 +1888,7 @@
     "start_line": 503,
     "type": "double"
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": "definition of time zero-the beginning of simulation",
     "end_line": 505,
@@ -1900,7 +1900,7 @@
     "type": "HelicsTime",
     "value": 0.0
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": "definition of the minimum time resolution",
     "end_line": 506,
@@ -1912,7 +1912,7 @@
     "type": "HelicsTime",
     "value": 1e-09
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": "definition of an invalid time that has no meaning",
     "end_line": 507,
@@ -1924,7 +1924,7 @@
     "type": "HelicsTime",
     "value": -1.785e+39
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": "definition of time signifying the federate has terminated or run until the end of the simulation",
     "end_line": 508,
@@ -1936,7 +1936,7 @@
     "type": "HelicsTime",
     "value": "HELICS_BIG_NUMBER"
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": null,
     "end_line": 515,
@@ -1947,7 +1947,7 @@
     "start_line": 515,
     "type": "int"
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": "indicator used for a true response",
     "end_line": 517,
@@ -1959,7 +1959,7 @@
     "type": "HelicsBool",
     "value": 1
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java var definition for:
 {
     "brief_comment": "indicator used for a false response",
     "end_line": 518,
@@ -1971,7 +1971,7 @@
     "type": "HelicsBool",
     "value": 0
 }
-2022-08-06 13:48:07,730 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,235 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of the different iteration results",
     "end_line": 527,
@@ -2017,7 +2017,7 @@
     "start_line": 523,
     "type": "Enum"
 }
-2022-08-06 13:48:07,731 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,236 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of possible return values from an iterative time request",
     "end_line": 537,
@@ -2074,7 +2074,7 @@
     "start_line": 532,
     "type": "Enum"
 }
-2022-08-06 13:48:07,732 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
+2022-08-06 17:33:15,236 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java enum definition for:
 {
     "brief_comment": "enumeration of possible federate states",
     "end_line": 555,
@@ -2208,7 +2208,7 @@
     "start_line": 542,
     "type": "Enum"
 }
-2022-08-06 13:48:07,732 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java struct definition for:
+2022-08-06 17:33:15,237 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java struct definition for:
 {
     "brief_comment": "structure defining a basic complex type",
     "end_line": 563,
@@ -2241,7 +2241,7 @@
     "start_line": 560,
     "type": "Record"
 }
-2022-08-06 13:48:07,733 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,237 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": "structure defining a basic complex type",
     "end_line": 563,
@@ -2252,7 +2252,7 @@
     "start_line": 560,
     "type": "struct HelicsComplex"
 }
-2022-08-06 13:48:07,733 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java struct definition for:
+2022-08-06 17:33:15,237 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java struct definition for:
 {
     "brief_comment": "helics error object",
     "end_line": 574,
@@ -2285,7 +2285,7 @@
     "start_line": 571,
     "type": "Record"
 }
-2022-08-06 13:48:07,733 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
+2022-08-06 17:33:15,237 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating Java typesafe pointer definition for:
 {
     "brief_comment": "helics error object",
     "end_line": 574,
@@ -2296,7 +2296,7 @@
     "start_line": 571,
     "type": "struct HelicsError"
 }
-2022-08-06 13:48:07,734 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,237 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2320,7 +2320,7 @@
     "start_line": 579,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,734 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,237 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2344,7 +2344,7 @@
     "start_line": 582,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,734 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,237 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2389,7 +2389,7 @@
     "start_line": 585,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,734 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2413,7 +2413,7 @@
     "start_line": 588,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,734 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2437,7 +2437,7 @@
     "start_line": 591,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,735 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2461,7 +2461,7 @@
     "start_line": 594,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,735 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2486,7 +2486,7 @@
     "start_line": 597,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,735 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2520,7 +2520,7 @@
     "start_line": 601,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,735 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2544,7 +2544,7 @@
     "start_line": 604,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,735 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2578,7 +2578,7 @@
     "start_line": 607,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,735 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2612,7 +2612,7 @@
     "start_line": 610,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,736 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2647,7 +2647,7 @@
     "start_line": 613,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,736 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2692,7 +2692,7 @@
     "start_line": 616,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,736 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2726,7 +2726,7 @@
     "start_line": 619,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,736 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2760,7 +2760,7 @@
     "start_line": 622,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,736 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,238 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2794,7 +2794,7 @@
     "start_line": 625,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,736 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2838,7 +2838,7 @@
     "start_line": 628,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,737 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2872,7 +2872,7 @@
     "start_line": 631,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,737 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2917,7 +2917,7 @@
     "start_line": 634,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,737 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -2962,7 +2962,7 @@
     "start_line": 637,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,737 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3007,7 +3007,7 @@
     "start_line": 640,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,737 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3031,7 +3031,7 @@
     "start_line": 643,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,737 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3055,7 +3055,7 @@
     "start_line": 646,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,737 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3079,7 +3079,7 @@
     "start_line": 649,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,738 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3103,7 +3103,7 @@
     "start_line": 652,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,738 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3127,7 +3127,7 @@
     "start_line": 655,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,738 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3151,7 +3151,7 @@
     "start_line": 658,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,739 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,239 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3207,7 +3207,7 @@
     "start_line": 663,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,739 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3263,7 +3263,7 @@
     "start_line": 667,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,740 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3287,7 +3287,7 @@
     "start_line": 670,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,740 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3311,7 +3311,7 @@
     "start_line": 673,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,740 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3357,7 +3357,7 @@
     "start_line": 676,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,740 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3381,7 +3381,7 @@
     "start_line": 679,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,740 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3436,7 +3436,7 @@
     "start_line": 682,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,740 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3491,7 +3491,7 @@
     "start_line": 690,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,740 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3558,7 +3558,7 @@
     "start_line": 692,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3592,7 +3592,7 @@
     "start_line": 699,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,240 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Get a version string for HELICS.",
@@ -3606,7 +3606,7 @@
     "start_line": 713,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Get the build flags used to compile HELICS.",
@@ -3620,7 +3620,7 @@
     "start_line": 718,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Get the compiler version used to compile HELICS.",
@@ -3634,7 +3634,7 @@
     "start_line": 723,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Get a json formatted system information string, containing version info. The string contains fields with system information like cpu, core count, operating system, and memory, as well as information about the HELICS build. Used for debugging reports and gathering other information.",
@@ -3648,7 +3648,7 @@
     "start_line": 730,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Return an initialized error object.",
@@ -3661,7 +3661,7 @@
     "start_line": 735,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3686,7 +3686,7 @@
     "start_line": 740,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Load a signal handler that handles Ctrl-C and shuts down all HELICS brokers, cores, and federates then exits the process.",
@@ -3699,7 +3699,7 @@
     "start_line": 744,
     "type": "FunctionNoProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Load a signal handler that handles Ctrl-C and shuts down all HELICS brokers, cores, and federates then exits the process. This operation will execute in a newly created and detached thread returning control back to the calling program before completing operations.",
@@ -3712,7 +3712,7 @@
     "start_line": 749,
     "type": "FunctionNoProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Clear HELICS based signal handlers.",
@@ -3725,7 +3725,7 @@
     "start_line": 752,
     "type": "FunctionNoProto"
 }
-2022-08-06 13:48:07,741 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3760,7 +3760,7 @@
     "start_line": 762,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,742 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3795,7 +3795,7 @@
     "start_line": 772,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,742 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3830,7 +3830,7 @@
     "start_line": 776,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,742 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3855,7 +3855,7 @@
     "start_line": 785,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,742 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3913,7 +3913,7 @@
     "start_line": 803,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,742 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -3981,7 +3981,7 @@
     "start_line": 821,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,742 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,241 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4016,7 +4016,7 @@
     "start_line": 833,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,742 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4040,7 +4040,7 @@
     "start_line": 840,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,742 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4098,7 +4098,7 @@
     "start_line": 859,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4166,7 +4166,7 @@
     "start_line": 874,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4201,7 +4201,7 @@
     "start_line": 889,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4225,7 +4225,7 @@
     "start_line": 896,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4249,7 +4249,7 @@
     "start_line": 905,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4306,7 +4306,7 @@
     "start_line": 917,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4363,7 +4363,7 @@
     "start_line": 929,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4420,7 +4420,7 @@
     "start_line": 941,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4466,7 +4466,7 @@
     "start_line": 953,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,743 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,242 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4511,7 +4511,7 @@
     "start_line": 966,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4556,7 +4556,7 @@
     "start_line": 979,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4580,7 +4580,7 @@
     "start_line": 988,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4637,7 +4637,7 @@
     "start_line": 1000,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4694,7 +4694,7 @@
     "start_line": 1012,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4751,7 +4751,7 @@
     "start_line": 1024,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4797,7 +4797,7 @@
     "start_line": 1035,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4822,7 +4822,7 @@
     "start_line": 1044,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4847,7 +4847,7 @@
     "start_line": 1053,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,744 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4872,7 +4872,7 @@
     "start_line": 1062,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4897,7 +4897,7 @@
     "start_line": 1071,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4932,7 +4932,7 @@
     "start_line": 1084,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,243 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -4967,7 +4967,7 @@
     "start_line": 1096,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5002,7 +5002,7 @@
     "start_line": 1106,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5038,7 +5038,7 @@
     "start_line": 1121,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5073,7 +5073,7 @@
     "start_line": 1131,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5097,7 +5097,7 @@
     "start_line": 1136,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5121,7 +5121,7 @@
     "start_line": 1141,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5145,7 +5145,7 @@
     "start_line": 1146,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,745 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5169,7 +5169,7 @@
     "start_line": 1151,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,746 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5193,7 +5193,7 @@
     "start_line": 1156,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,746 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5239,7 +5239,7 @@
     "start_line": 1175,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,746 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5275,7 +5275,7 @@
     "start_line": 1189,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,746 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5321,7 +5321,7 @@
     "start_line": 1205,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,746 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,244 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5357,7 +5357,7 @@
     "start_line": 1220,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,746 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5403,7 +5403,7 @@
     "start_line": 1236,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,746 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5439,7 +5439,7 @@
     "start_line": 1251,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,746 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5474,7 +5474,7 @@
     "start_line": 1265,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5510,7 +5510,7 @@
     "start_line": 1278,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5546,7 +5546,7 @@
     "start_line": 1291,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5582,7 +5582,7 @@
     "start_line": 1301,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Create a federate info object for specifying federate information when constructing a federate.",
@@ -5595,7 +5595,7 @@
     "start_line": 1308,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5630,7 +5630,7 @@
     "start_line": 1320,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5686,7 +5686,7 @@
     "start_line": 1332,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5732,7 +5732,7 @@
     "start_line": 1343,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5756,7 +5756,7 @@
     "start_line": 1348,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,747 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,245 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5780,7 +5780,7 @@
     "start_line": 1355,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5826,7 +5826,7 @@
     "start_line": 1366,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5872,7 +5872,7 @@
     "start_line": 1377,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5918,7 +5918,7 @@
     "start_line": 1388,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -5963,7 +5963,7 @@
     "start_line": 1400,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6009,7 +6009,7 @@
     "start_line": 1411,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6055,7 +6055,7 @@
     "start_line": 1423,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6101,7 +6101,7 @@
     "start_line": 1435,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6146,7 +6146,7 @@
     "start_line": 1448,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,748 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6192,7 +6192,7 @@
     "start_line": 1460,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,749 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6217,7 +6217,7 @@
     "start_line": 1468,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,749 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6242,7 +6242,7 @@
     "start_line": 1475,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,749 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6267,7 +6267,7 @@
     "start_line": 1485,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,749 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,246 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6292,7 +6292,7 @@
     "start_line": 1495,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,749 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,247 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6317,7 +6317,7 @@
     "start_line": 1505,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,749 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,247 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6372,7 +6372,7 @@
     "start_line": 1517,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,749 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,247 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6417,7 +6417,7 @@
     "start_line": 1529,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,749 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,247 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6472,7 +6472,7 @@
     "start_line": 1540,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,750 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6527,7 +6527,7 @@
     "start_line": 1554,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,750 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6573,7 +6573,7 @@
     "start_line": 1564,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,750 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6629,7 +6629,7 @@
     "start_line": 1576,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,750 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6685,7 +6685,7 @@
     "start_line": 1588,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,751 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6720,7 +6720,7 @@
     "start_line": 1593,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,751 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6755,7 +6755,7 @@
     "start_line": 1598,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,751 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6790,7 +6790,7 @@
     "start_line": 1603,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,751 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6825,7 +6825,7 @@
     "start_line": 1609,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,751 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6860,7 +6860,7 @@
     "start_line": 1614,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,751 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6895,7 +6895,7 @@
     "start_line": 1619,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,752 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,248 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6919,7 +6919,7 @@
     "start_line": 1624,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,752 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Call when done using the helics library. This function will ensure the threads are closed properly. If possible this should be the last call before exiting.",
@@ -6932,7 +6932,7 @@
     "start_line": 1630,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,752 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -6967,7 +6967,7 @@
     "start_line": 1646,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,752 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7002,7 +7002,7 @@
     "start_line": 1657,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,752 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7037,7 +7037,7 @@
     "start_line": 1668,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,752 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7072,7 +7072,7 @@
     "start_line": 1677,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,752 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7107,7 +7107,7 @@
     "start_line": 1689,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,753 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7142,7 +7142,7 @@
     "start_line": 1701,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,753 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7177,7 +7177,7 @@
     "start_line": 1710,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,753 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7222,7 +7222,7 @@
     "start_line": 1725,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,753 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7267,7 +7267,7 @@
     "start_line": 1740,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,753 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7302,7 +7302,7 @@
     "start_line": 1751,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,754 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7337,7 +7337,7 @@
     "start_line": 1762,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,754 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,249 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7372,7 +7372,7 @@
     "start_line": 1773,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,754 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7417,7 +7417,7 @@
     "start_line": 1785,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,754 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7462,7 +7462,7 @@
     "start_line": 1797,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,754 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7497,7 +7497,7 @@
     "start_line": 1811,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,755 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7563,7 +7563,7 @@
     "start_line": 1829,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,755 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7608,7 +7608,7 @@
     "start_line": 1845,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,755 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7643,7 +7643,7 @@
     "start_line": 1856,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,755 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7698,7 +7698,7 @@
     "start_line": 1870,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,755 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7744,7 +7744,7 @@
     "start_line": 1883,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,756 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7789,7 +7789,7 @@
     "start_line": 1895,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,756 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,250 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7814,7 +7814,7 @@
     "start_line": 1904,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,756 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7869,7 +7869,7 @@
     "start_line": 1915,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,756 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7924,7 +7924,7 @@
     "start_line": 1926,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,756 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -7969,7 +7969,7 @@
     "start_line": 1939,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,756 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8024,7 +8024,7 @@
     "start_line": 1950,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,756 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8069,7 +8069,7 @@
     "start_line": 1960,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,756 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8114,7 +8114,7 @@
     "start_line": 1972,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,757 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8159,7 +8159,7 @@
     "start_line": 1984,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,757 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8194,7 +8194,7 @@
     "start_line": 1995,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,757 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8251,7 +8251,7 @@
     "start_line": 2007,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,757 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8308,7 +8308,7 @@
     "start_line": 2019,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,757 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8355,7 +8355,7 @@
     "start_line": 2029,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,758 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,251 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8401,7 +8401,7 @@
     "start_line": 2039,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,758 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8447,7 +8447,7 @@
     "start_line": 2049,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,758 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8493,7 +8493,7 @@
     "start_line": 2059,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,758 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8539,7 +8539,7 @@
     "start_line": 2069,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,759 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8585,7 +8585,7 @@
     "start_line": 2079,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,759 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8631,7 +8631,7 @@
     "start_line": 2089,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,759 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8687,7 +8687,7 @@
     "start_line": 2100,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,759 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8744,7 +8744,7 @@
     "start_line": 2111,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,759 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8780,7 +8780,7 @@
     "start_line": 2122,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,759 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8816,7 +8816,7 @@
     "start_line": 2133,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,252 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8852,7 +8852,7 @@
     "start_line": 2144,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8909,7 +8909,7 @@
     "start_line": 2156,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -8966,7 +8966,7 @@
     "start_line": 2169,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9023,7 +9023,7 @@
     "start_line": 2180,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9080,7 +9080,7 @@
     "start_line": 2191,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9137,7 +9137,7 @@
     "start_line": 2202,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9194,7 +9194,7 @@
     "start_line": 2213,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9240,7 +9240,7 @@
     "start_line": 2223,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,760 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9286,7 +9286,7 @@
     "start_line": 2233,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,761 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9331,7 +9331,7 @@
     "start_line": 2243,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,761 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9355,7 +9355,7 @@
     "start_line": 2250,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,761 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,253 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9411,7 +9411,7 @@
     "start_line": 2261,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,761 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9467,7 +9467,7 @@
     "start_line": 2272,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,761 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9503,7 +9503,7 @@
     "start_line": 2281,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,761 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9549,7 +9549,7 @@
     "start_line": 2298,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,761 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9595,7 +9595,7 @@
     "start_line": 2314,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,761 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9641,7 +9641,7 @@
     "start_line": 2330,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9686,7 +9686,7 @@
     "start_line": 2340,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9722,7 +9722,7 @@
     "start_line": 2355,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9746,7 +9746,7 @@
     "start_line": 2367,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9792,7 +9792,7 @@
     "start_line": 2378,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9838,7 +9838,7 @@
     "start_line": 2388,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9883,7 +9883,7 @@
     "start_line": 2399,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,254 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9907,7 +9907,7 @@
     "start_line": 2404,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {},
     "brief_comment": "Function to do some housekeeping work.",
@@ -9920,7 +9920,7 @@
     "start_line": 2411,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,762 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -9977,7 +9977,7 @@
     "start_line": 2433,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,763 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10044,7 +10044,7 @@
     "start_line": 2451,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,763 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10112,7 +10112,7 @@
     "start_line": 2470,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,763 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10179,7 +10179,7 @@
     "start_line": 2489,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,763 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10247,7 +10247,7 @@
     "start_line": 2508,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,763 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10314,7 +10314,7 @@
     "start_line": 2527,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,763 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10382,7 +10382,7 @@
     "start_line": 2546,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,255 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10449,7 +10449,7 @@
     "start_line": 2565,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,256 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10517,7 +10517,7 @@
     "start_line": 2584,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,256 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10563,7 +10563,7 @@
     "start_line": 2599,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,256 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10608,7 +10608,7 @@
     "start_line": 2612,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,256 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10654,7 +10654,7 @@
     "start_line": 2626,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,256 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10699,7 +10699,7 @@
     "start_line": 2639,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,256 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10745,7 +10745,7 @@
     "start_line": 2653,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10769,7 +10769,7 @@
     "start_line": 2660,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,764 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10815,7 +10815,7 @@
     "start_line": 2673,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,765 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10861,7 +10861,7 @@
     "start_line": 2684,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,765 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10885,7 +10885,7 @@
     "start_line": 2701,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,765 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10941,7 +10941,7 @@
     "start_line": 2713,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,765 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -10987,7 +10987,7 @@
     "start_line": 2724,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,765 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11032,7 +11032,7 @@
     "start_line": 2735,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,765 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11077,7 +11077,7 @@
     "start_line": 2746,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,765 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11122,7 +11122,7 @@
     "start_line": 2757,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,765 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11167,7 +11167,7 @@
     "start_line": 2768,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,766 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11212,7 +11212,7 @@
     "start_line": 2779,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,766 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,257 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11267,7 +11267,7 @@
     "start_line": 2791,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,766 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11323,7 +11323,7 @@
     "start_line": 2803,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,766 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11379,7 +11379,7 @@
     "start_line": 2815,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,766 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11435,7 +11435,7 @@
     "start_line": 2828,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,766 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11481,7 +11481,7 @@
     "start_line": 2839,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,766 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11505,7 +11505,7 @@
     "start_line": 2848,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,767 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11551,7 +11551,7 @@
     "start_line": 2859,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,767 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11575,7 +11575,7 @@
     "start_line": 2875,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,767 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11642,7 +11642,7 @@
     "start_line": 2887,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,767 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11666,7 +11666,7 @@
     "start_line": 2894,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,767 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11733,7 +11733,7 @@
     "start_line": 2906,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,768 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11768,7 +11768,7 @@
     "start_line": 2917,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,768 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,258 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11803,7 +11803,7 @@
     "start_line": 2928,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,768 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11838,7 +11838,7 @@
     "start_line": 2939,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,768 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11873,7 +11873,7 @@
     "start_line": 2950,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,768 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11908,7 +11908,7 @@
     "start_line": 2962,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,768 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -11943,7 +11943,7 @@
     "start_line": 2974,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,768 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12000,7 +12000,7 @@
     "start_line": 2986,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,769 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12024,7 +12024,7 @@
     "start_line": 2993,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,769 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12090,7 +12090,7 @@
     "start_line": 3005,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,769 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12156,7 +12156,7 @@
     "start_line": 3017,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,770 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12234,7 +12234,7 @@
     "start_line": 3030,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,770 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,259 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12290,7 +12290,7 @@
     "start_line": 3050,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,770 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12336,7 +12336,7 @@
     "start_line": 3060,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,771 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12381,7 +12381,7 @@
     "start_line": 3070,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,771 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12426,7 +12426,7 @@
     "start_line": 3080,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,771 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12471,7 +12471,7 @@
     "start_line": 3090,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,771 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12516,7 +12516,7 @@
     "start_line": 3100,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,771 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12561,7 +12561,7 @@
     "start_line": 3110,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12616,7 +12616,7 @@
     "start_line": 3121,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12672,7 +12672,7 @@
     "start_line": 3132,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12728,7 +12728,7 @@
     "start_line": 3143,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12784,7 +12784,7 @@
     "start_line": 3154,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12809,7 +12809,7 @@
     "start_line": 3170,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12834,7 +12834,7 @@
     "start_line": 3179,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,260 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12858,7 +12858,7 @@
     "start_line": 3188,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12883,7 +12883,7 @@
     "start_line": 3197,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12908,7 +12908,7 @@
     "start_line": 3206,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12933,7 +12933,7 @@
     "start_line": 3213,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12958,7 +12958,7 @@
     "start_line": 3224,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,772 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -12983,7 +12983,7 @@
     "start_line": 3233,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,773 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13008,7 +13008,7 @@
     "start_line": 3242,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,773 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13033,7 +13033,7 @@
     "start_line": 3253,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,773 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13058,7 +13058,7 @@
     "start_line": 3262,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,773 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13083,7 +13083,7 @@
     "start_line": 3271,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,773 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13129,7 +13129,7 @@
     "start_line": 3281,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,773 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13165,7 +13165,7 @@
     "start_line": 3290,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,773 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13222,7 +13222,7 @@
     "start_line": 3301,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,773 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13247,7 +13247,7 @@
     "start_line": 3310,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,774 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,261 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13293,7 +13293,7 @@
     "start_line": 3320,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,774 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13329,7 +13329,7 @@
     "start_line": 3329,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,774 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13386,7 +13386,7 @@
     "start_line": 3340,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,774 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13420,7 +13420,7 @@
     "start_line": 3350,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,774 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13475,7 +13475,7 @@
     "start_line": 3361,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,774 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13509,7 +13509,7 @@
     "start_line": 3371,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,774 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13564,7 +13564,7 @@
     "start_line": 3382,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,774 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13609,7 +13609,7 @@
     "start_line": 3392,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13654,7 +13654,7 @@
     "start_line": 3402,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13678,7 +13678,7 @@
     "start_line": 3411,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13702,7 +13702,7 @@
     "start_line": 3416,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13726,7 +13726,7 @@
     "start_line": 3421,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13750,7 +13750,7 @@
     "start_line": 3428,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,262 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13774,7 +13774,7 @@
     "start_line": 3435,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13831,7 +13831,7 @@
     "start_line": 3455,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13888,7 +13888,7 @@
     "start_line": 3472,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,775 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -13945,7 +13945,7 @@
     "start_line": 3491,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,776 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14002,7 +14002,7 @@
     "start_line": 3512,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,776 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14048,7 +14048,7 @@
     "start_line": 3530,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,776 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14093,7 +14093,7 @@
     "start_line": 3545,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,776 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14117,7 +14117,7 @@
     "start_line": 3554,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,776 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14163,7 +14163,7 @@
     "start_line": 3564,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,776 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14188,7 +14188,7 @@
     "start_line": 3573,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,776 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,263 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14244,7 +14244,7 @@
     "start_line": 3584,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,776 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14311,7 +14311,7 @@
     "start_line": 3597,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14388,7 +14388,7 @@
     "start_line": 3615,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14454,7 +14454,7 @@
     "start_line": 3636,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14499,7 +14499,7 @@
     "start_line": 3647,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14544,7 +14544,7 @@
     "start_line": 3658,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14590,7 +14590,7 @@
     "start_line": 3668,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14614,7 +14614,7 @@
     "start_line": 3677,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14638,7 +14638,7 @@
     "start_line": 3686,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14662,7 +14662,7 @@
     "start_line": 3693,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14686,7 +14686,7 @@
     "start_line": 3700,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,777 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14710,7 +14710,7 @@
     "start_line": 3709,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,778 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14745,7 +14745,7 @@
     "start_line": 3723,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,778 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,264 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14769,7 +14769,7 @@
     "start_line": 3732,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,778 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14793,7 +14793,7 @@
     "start_line": 3743,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,778 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14828,7 +14828,7 @@
     "start_line": 3757,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,778 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14852,7 +14852,7 @@
     "start_line": 3766,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,778 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14877,7 +14877,7 @@
     "start_line": 3775,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,778 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14902,7 +14902,7 @@
     "start_line": 3784,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14926,7 +14926,7 @@
     "start_line": 3793,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14951,7 +14951,7 @@
     "start_line": 3802,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -14997,7 +14997,7 @@
     "start_line": 3813,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15033,7 +15033,7 @@
     "start_line": 3822,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15090,7 +15090,7 @@
     "start_line": 3834,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15145,7 +15145,7 @@
     "start_line": 3846,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15179,7 +15179,7 @@
     "start_line": 3855,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,265 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15225,7 +15225,7 @@
     "start_line": 3866,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,779 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15271,7 +15271,7 @@
     "start_line": 3877,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15317,7 +15317,7 @@
     "start_line": 3888,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15363,7 +15363,7 @@
     "start_line": 3899,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15409,7 +15409,7 @@
     "start_line": 3909,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15434,7 +15434,7 @@
     "start_line": 3924,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15459,7 +15459,7 @@
     "start_line": 3933,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15484,7 +15484,7 @@
     "start_line": 3942,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15509,7 +15509,7 @@
     "start_line": 3951,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15533,7 +15533,7 @@
     "start_line": 3960,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,780 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15558,7 +15558,7 @@
     "start_line": 3969,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15582,7 +15582,7 @@
     "start_line": 3978,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15616,7 +15616,7 @@
     "start_line": 3988,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15640,7 +15640,7 @@
     "start_line": 3997,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,266 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15707,7 +15707,7 @@
     "start_line": 4009,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15732,7 +15732,7 @@
     "start_line": 4018,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15756,7 +15756,7 @@
     "start_line": 4027,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15802,7 +15802,7 @@
     "start_line": 4037,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15848,7 +15848,7 @@
     "start_line": 4047,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,781 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15894,7 +15894,7 @@
     "start_line": 4057,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,782 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15940,7 +15940,7 @@
     "start_line": 4067,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,782 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -15985,7 +15985,7 @@
     "start_line": 4077,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,782 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16030,7 +16030,7 @@
     "start_line": 4090,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,782 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16075,7 +16075,7 @@
     "start_line": 4102,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,783 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16120,7 +16120,7 @@
     "start_line": 4114,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,783 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16144,7 +16144,7 @@
     "start_line": 4121,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,783 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,267 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16199,7 +16199,7 @@
     "start_line": 4132,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,783 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16245,7 +16245,7 @@
     "start_line": 4142,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,784 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16301,7 +16301,7 @@
     "start_line": 4153,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,784 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16357,7 +16357,7 @@
     "start_line": 4164,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,784 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16402,7 +16402,7 @@
     "start_line": 4174,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,784 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16437,7 +16437,7 @@
     "start_line": 4183,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,785 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16461,7 +16461,7 @@
     "start_line": 4192,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,785 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16496,7 +16496,7 @@
     "start_line": 4201,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,785 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16552,7 +16552,7 @@
     "start_line": 4220,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,786 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16608,7 +16608,7 @@
     "start_line": 4236,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,786 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16654,7 +16654,7 @@
     "start_line": 4255,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,786 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16700,7 +16700,7 @@
     "start_line": 4271,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,786 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,268 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16756,7 +16756,7 @@
     "start_line": 4288,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,787 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16802,7 +16802,7 @@
     "start_line": 4304,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,787 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16826,7 +16826,7 @@
     "start_line": 4313,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,787 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16872,7 +16872,7 @@
     "start_line": 4327,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,787 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16917,7 +16917,7 @@
     "start_line": 4339,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,788 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16941,7 +16941,7 @@
     "start_line": 4348,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,788 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -16966,7 +16966,7 @@
     "start_line": 4357,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,788 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17022,7 +17022,7 @@
     "start_line": 4369,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,788 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17079,7 +17079,7 @@
     "start_line": 4381,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,788 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17125,7 +17125,7 @@
     "start_line": 4393,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,789 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17171,7 +17171,7 @@
     "start_line": 4406,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,789 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,269 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17217,7 +17217,7 @@
     "start_line": 4425,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,789 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17263,7 +17263,7 @@
     "start_line": 4437,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,789 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17309,7 +17309,7 @@
     "start_line": 4448,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,789 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17334,7 +17334,7 @@
     "start_line": 4457,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,790 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17380,7 +17380,7 @@
     "start_line": 4467,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,790 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17416,7 +17416,7 @@
     "start_line": 4476,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,790 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17473,7 +17473,7 @@
     "start_line": 4488,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,790 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17528,7 +17528,7 @@
     "start_line": 4501,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,790 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17562,7 +17562,7 @@
     "start_line": 4509,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,790 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17618,7 +17618,7 @@
     "start_line": 4530,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,791 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17674,7 +17674,7 @@
     "start_line": 4549,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,791 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,270 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17730,7 +17730,7 @@
     "start_line": 4569,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,791 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17754,7 +17754,7 @@
     "start_line": 4581,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,791 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17800,7 +17800,7 @@
     "start_line": 4595,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,792 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17845,7 +17845,7 @@
     "start_line": 4607,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,792 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17869,7 +17869,7 @@
     "start_line": 4616,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,792 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17894,7 +17894,7 @@
     "start_line": 4625,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,792 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -17950,7 +17950,7 @@
     "start_line": 4637,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,792 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18007,7 +18007,7 @@
     "start_line": 4649,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,792 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18053,7 +18053,7 @@
     "start_line": 4662,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,792 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18099,7 +18099,7 @@
     "start_line": 4677,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,792 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18145,7 +18145,7 @@
     "start_line": 4690,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,793 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,271 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18191,7 +18191,7 @@
     "start_line": 4704,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,793 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18237,7 +18237,7 @@
     "start_line": 4722,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,793 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18262,7 +18262,7 @@
     "start_line": 4731,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,793 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18308,7 +18308,7 @@
     "start_line": 4741,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,794 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18344,7 +18344,7 @@
     "start_line": 4750,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,794 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18401,7 +18401,7 @@
     "start_line": 4762,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,794 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18456,7 +18456,7 @@
     "start_line": 4775,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,794 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18490,7 +18490,7 @@
     "start_line": 4783,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,795 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18547,7 +18547,7 @@
     "start_line": 4804,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,795 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18604,7 +18604,7 @@
     "start_line": 4823,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,795 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18661,7 +18661,7 @@
     "start_line": 4843,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,795 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,272 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18718,7 +18718,7 @@
     "start_line": 4863,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,795 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,273 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18786,7 +18786,7 @@
     "start_line": 4885,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,795 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,273 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18843,7 +18843,7 @@
     "start_line": 4911,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,795 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,273 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18900,7 +18900,7 @@
     "start_line": 4933,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,796 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,273 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -18957,7 +18957,7 @@
     "start_line": 4953,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,796 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,273 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -19014,7 +19014,7 @@
     "start_line": 4971,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,796 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,273 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -19071,7 +19071,7 @@
     "start_line": 4995,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,796 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
+2022-08-06 17:33:15,273 - bindingGenerators.javaBindingGeneratorJNA - DEBUG - creating JAVA function definition for:
 {
     "arguments": {
         "0": {
@@ -19127,4 +19127,4 @@
     "start_line": 5014,
     "type": "FunctionProto"
 }
-2022-08-06 13:48:07,801 - bindingGenerators.javaBindingGeneratorJNA - INFO - JAVA HELICS API successfully created!
+2022-08-06 17:33:15,275 - bindingGenerators.javaBindingGeneratorJNA - INFO - JAVA HELICS API successfully created!

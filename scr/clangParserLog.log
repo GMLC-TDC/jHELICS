@@ -1,5 +1,5 @@
-2022-08-06 13:48:07,653 - bindingGenerators.clangparser - INFO - Clang successfully parsed the HELICS header files!
-2022-08-06 13:48:07,711 - bindingGenerators.clangparser - DEBUG - The clang parser result:
+2022-08-06 17:33:15,171 - bindingGenerators.clangparser - INFO - Clang successfully parsed the HELICS header files!
+2022-08-06 17:33:15,214 - bindingGenerators.clangparser - DEBUG - The clang parser result:
 {
     "0": {
         "brief_comment": null,

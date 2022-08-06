@@ -43,7 +43,7 @@ class JavaBindingGenerator(object):
         """
             Function that creates the HELICS Java Bindings
         """
-        def createBoilerPlate(headerFilename, constantlist, importStandAloneConstFiles) -> str:
+        def createBoilerPlate(headerFilename, importStandAloneConstFiles) -> str:
             javaBoilerPlateStr = ""
             copyRightStr = "/*\n"
             copyRightStr += "Copyright (c) 2017-2022,\n"
@@ -53,15 +53,9 @@ class JavaBindingGenerator(object):
             copyRightStr += "*/\n\n"
             javaBoilerPlateStr = copyRightStr
             javaBoilerPlateStr += "package com.java.helics;\n\n"  
-            for constfile in importStandAloneConstFiles:
-                javaBoilerPlateStr += f"import static com.java.helics.{constfile}.*;\n"
             javaBoilerPlateStr += "import com.sun.jna.*;\n"
             javaBoilerPlateStr += "import com.sun.jna.ptr.*;\n\n"
-            javaBoilerPlateStr += "public class JavaHELICS {\n\t"
-            for constant in constantlist:
-                javaBoilerPlateStr += f"{constant}\n\t"
-            javaBoilerPlateStr += "public interface HelicsInterface extends Library {\n\t\t"
-            javaBoilerPlateStr += "HelicsInterface INSTANCE = (HelicsInterface)Native.loadLibrary('helics', HelicsInterface.class);\n\t\t"
+            javaBoilerPlateStr += "public interface JavaHelicsLibrary extends Library {\n\t"
             return javaBoilerPlateStr  
              
         def createEnum(enumDict: dict()) -> None:
@@ -192,14 +186,14 @@ class JavaBindingGenerator(object):
             javaBindingGeneratorLogger.debug(f"creating Java typesafe pointer definition for:\n{json.dumps(typeSafepointerDict,indent=4,sort_keys=True)}")
             tsPointerSpelling = typeSafepointerDict.get("spelling","")
             tsPointerComment = typeSafepointerDict.get("brief_comment","")
-            tsPointerType = typeSafepointerDict.get("value")
+            tsPointerType = typeSafepointerDict.get('type')
             if tsPointerType == "void *":
-                with open(os.path.join(self.__rootDir, "javaBindings\\+helics\\",f"{tsPointerSpelling}.java"), "w") as tysPointerFile:
+                with open(os.path.join(self.__rootDir, "com\\java\\helics", f"{tsPointerSpelling}.java"), "w") as tysPointerFile:
                     if tsPointerComment != None:
                         tysPointerFile.write("/*\n")
                         tysPointerFile.write(f"{tsPointerComment}\n")
                         tysPointerFile.write("*/\n")
-                    tysPointerFile.write(f"\npackage com.java.helics;\n\nimport com.sun.jna.PointerType.java\n\npublic class {tsPointerSpelling}"+" extends {}")
+                    tysPointerFile.write(f"\npackage com.java.helics;\n\nimport com.sun.jna.PointerType;\n\npublic class {tsPointerSpelling}"+" extends PointerType{}")
             else:
                 return
         def createFunction(functionDict: dict(), cursorIdx: int):
@@ -258,10 +252,10 @@ class JavaBindingGenerator(object):
             if functionName not in functionsToIgnoreJNA:
                 functionName = functionDict.get("spelling")
                 functionComment = functionDict.get("raw_comment")
-                functionJavaCallStr = "\n\t\t"
+                functionJavaCallStr = "\n\t"
                 functionJavaCallStr += functionComment+"\n\t\t"
                 functionReturnType = getFunctionReturnType(functionDict)
-                functionJavaCallStr += "\n\t\t" + functionReturnType 
+                functionJavaCallStr += "\n\t" + functionReturnType 
                 functionJavaCallStr += " "+ functionName + "("
                 size = len(functionDict.get('arguments',{}).keys())
                 count = 0
@@ -385,11 +379,31 @@ class JavaBindingGenerator(object):
             if self.__helicsParser.parsedInfo[cu]["kind"] == cidx.CursorKind.FUNCTION_DECL.name:
                 functionJAVAWrapperFunctionStr = createFunction(self.__helicsParser.parsedInfo[cu],int(cu))
                 helicsJAVAWrapperFunctions.append(functionJAVAWrapperFunctionStr)
-        helicsJAVAStr += createBoilerPlate("helics", helicsJAVAConstants, helicsJAVAStandAloneConstantFiles)
+        helicsJAVAStr += createBoilerPlate("helics", helicsJAVAStandAloneConstantFiles)
+        with open(os.path.join(self.__rootDir,"com\\java\\helics","HelicsConstants.java"), "w") as helicsJavaConstFile:
+            helicsJavaConstFile.write(f"\npackage com.java.helics;\n\npublic final class HelicsConstants"+"{")
+            for constant in helicsJAVAConstants:
+                helicsJavaConstFile.write(f"{constant}")
+            helicsJavaConstFile.write(f"\n\tprivate HelicsConstants()"+"{}"+"\n}")
         for wrapperStr in helicsJAVAWrapperFunctions:
             helicsJAVAStr += wrapperStr 
-        helicsJAVAStr += "\n\t"+"}"+"\n"+"}"
+        helicsJAVAStr += "\n\t"+"}"
+        with open(os.path.join(self.__rootDir,"com\\java\\helics","JavaHelicsLibrary.java"), "w") as helicsJavaMainClassFile:
+            helicsJavaMainClassFile.write("package com.java.helics;\n\n")
+            helicsJavaMainClassFile.write("import java.io.*;\n")
+            helicsJavaMainClassFile.write("import java.io.IOException;\n")
+            helicsJavaMainClassFile.write("import java.io.InputStream;\n")
+            helicsJavaMainClassFile.write("import java.io.File;\n")
+            helicsJavaMainClassFile.write("import org.apache.commons.io.FileUtils;\n")
+            helicsJavaMainClassFile.write("public class JavaHelics implements JavaHelicsLibrary {\n\t")
+            helicsJavaMainClassFile.write("public JavaHelics(final String fileName) throws IOException {\n\t\t")
+            helicsJavaMainClassFile.write("INSTANCE = Native.loadLibrary(extratcFile(fileName), JavaHelicsLibrary.class);\n\t")
+            helicsJavaMainClassFile.write("}\n\t")
+            helicsJavaMainClassFile.write("private String extratcFile(final String fileName) throws IOException {\n\t\t")
+            helicsJavaMainClassFile.write("final InputStream source = JavaHelics.class.getClassLoader().getResourceAsStream(fileName);\n\t\t")
+            helicsJavaMainClassFile.write("final File file = File.createTempFile(\"lib\", null);\n\t\t")
+            helicsJavaMainClassFile.write("FileUtils.copyInputStreamToFile(source, file);\n\t\t")
+            helicsJavaMainClassFile.write("return file.getAbsolutePath();\n\t}\n}")
         with open(os.path.join(self.__rootDir,"com\\java\\helics","JavaHelics.java"), "w") as helicsJavaFile:
-            
             helicsJavaFile.write(helicsJAVAStr)
         javaBindingGeneratorLogger.info("JAVA HELICS API successfully created!")
