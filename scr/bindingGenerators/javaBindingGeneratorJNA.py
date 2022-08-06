@@ -389,7 +389,7 @@ class JavaBindingGenerator(object):
         for wrapperStr in helicsJAVAWrapperFunctions:
             helicsJAVAStr += wrapperStr 
         helicsJAVAStr += "\n\t"+"}"+"\n"+"}"
-        with open(os.path.join(self.__rootDir, "JavaHelics.java"), "w") as helicsJavaFile:
+        with open(os.path.join(self.__rootDir,"com\\java\\helics","JavaHelics.java"), "w") as helicsJavaFile:
             
             helicsJavaFile.write(helicsJAVAStr)
         javaBindingGeneratorLogger.info("JAVA HELICS API successfully created!")
