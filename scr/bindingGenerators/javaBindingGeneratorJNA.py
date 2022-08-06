@@ -54,7 +54,7 @@ class JavaBindingGenerator(object):
             javaBoilerPlateStr = copyRightStr
             javaBoilerPlateStr += "package com.java.helics;\n\n"  
             for constfile in importStandAloneConstFiles:
-                javaBoilerPlateStr += f"import static com.java.helics.{constfile}.*\n"
+                javaBoilerPlateStr += f"import static com.java.helics.{constfile}.*;\n"
             javaBoilerPlateStr += "import com.sun.jna.*;\n"
             javaBoilerPlateStr += "import com.sun.jna.ptr.*;\n\n"
             javaBoilerPlateStr += "public class JavaHELICS {\n\t"
@@ -71,7 +71,7 @@ class JavaBindingGenerator(object):
             javaBindingGeneratorLogger.debug(f"creating Java enum definition for:\n{json.dumps(enumDict,indent=4,sort_keys=True)}")
             enumSpelling = enumDict.get('spelling','')
             enumComment = enumDict.get('brief_comment','')
-            with open(os.path.join(self.__rootDir, f"javaBindings\\+helics\\{enumSpelling}.java"),"w") as enumMFile:
+            with open(os.path.join(self.__rootDir,"com\\java\\helics",f"{enumSpelling}.java"),"w") as enumMFile:
                 
                 enumMFile.write("/*\n"+f"{enumComment}\n\nAttributes:")
                 docStrBody = ""
@@ -105,10 +105,10 @@ class JavaBindingGenerator(object):
             javaBindingGeneratorLogger.debug(f"creating Java struct definition for:\n{json.dumps(structDict,indent=4,sort_keys=True)}")
             strucSpelling = structDict.get('spelling','')
             strucComment = structDict.get('brief_comment','')
-            with open(os.path.join(self.__rootDir, f"javaBindings\\+helics\\{strucSpelling}.java"),"w") as structFile:
+            with open(os.path.join(self.__rootDir, "com\\java\\helics", f"{strucSpelling}.java"),"w") as structFile:
                 structFile.write("/*\n"+f"{strucComment}\n*/")
-                structFile.write("\npackage com.java.helics")
-                structFile.write("\n\nimport com.sun.jna.Structure")
+                structFile.write("\npackage com.java.helics;")
+                structFile.write("\n\nimport com.sun.jna.Structure;")
                 structFile.write(f"\n\npublic static class {strucSpelling} extends Structure"+"{")
                 structStrBody = ""
                 for structKey in structDict.get('members',{}).keys():
@@ -117,8 +117,10 @@ class JavaBindingGenerator(object):
                     keywordcomm = structDict.get('members',{}).get(structKey,{}).get('brief_comment')
                     if keywordtype == "Pointer" and strucSpelling == "HelicsError":
                         structStrBody += f"\n\t/*{keywordcomm}*/\n\tpublic string {keywordSpelling};"
-                    else: 
-                        structStrBody += f"\n\t/*{keywordcomm}*/\n\tpublic {keywordtype} {keywordSpelling};"
+                    if keywordtype == "Int":
+                        structStrBody += f"\n\t/*{keywordcomm}*/\n\tpublic int {keywordSpelling};"
+                    if keywordtype == "Double":
+                        structStrBody += f"\n\t/*{keywordcomm}*/\n\tpublic double {keywordSpelling};"
             
                
                 structFile.write(structStrBody)
@@ -136,7 +138,7 @@ class JavaBindingGenerator(object):
             newMacroSpelling = "".join(newMacroSpellingTmp)
             ignoreMacro = "HELICS_DATA_TYPE_CHAR"
             if isinstance(macroValue, float) and macroSpelling != ignoreMacro:
-                with open(os.path.join(self.__rootDir, f"javaBindings\\+helics\\{newMacroSpelling}.java","w"), "w") as macroFile:
+                with open(os.path.join(self.__rootDir, f"com\\java\\helics",f"{newMacroSpelling}.java"), "w") as macroFile:
                     if macroComment != None:
                         macroFile.write("/*\n")
                         macroFile.write(f"{macroComment}\n")
@@ -147,7 +149,7 @@ class JavaBindingGenerator(object):
                     macroFile.write("\n}")
                     return newMacroSpelling
             elif isinstance(macroValue, int) and macroSpelling != ignoreMacro:
-                with open(os.path.join(self.__rootDir, f"javaBindings\\+helics\\{newMacroSpelling}.java","w"), "w") as macroFile:
+                with open(os.path.join(self.__rootDir, "com\\java\\helics",f"{newMacroSpelling}.java"), "w") as macroFile:
                     if macroComment != None:
                         macroFile.write("/*\n")
                         macroFile.write(f"{macroComment}\n")
@@ -192,7 +194,7 @@ class JavaBindingGenerator(object):
             tsPointerComment = typeSafepointerDict.get("brief_comment","")
             tsPointerType = typeSafepointerDict.get("value")
             if tsPointerType == "void *":
-                with open(os.path.join(self.__rootDir, f"javaBindings\\+helics\\{tsPointerSpelling}.java","w"), "w") as tysPointerFile:
+                with open(os.path.join(self.__rootDir, "javaBindings\\+helics\\",f"{tsPointerSpelling}.java"), "w") as tysPointerFile:
                     if tsPointerComment != None:
                         tysPointerFile.write("/*\n")
                         tysPointerFile.write(f"{tsPointerComment}\n")
@@ -201,7 +203,7 @@ class JavaBindingGenerator(object):
             else:
                 return
         def createFunction(functionDict: dict(), cursorIdx: int):
-            javaBindingGeneratorLogger.debug(f"creating MATLAB function definition for:\n{json.dumps(functionDict,indent=4,sort_keys=True)}")
+            javaBindingGeneratorLogger.debug(f"creating JAVA function definition for:\n{json.dumps(functionDict,indent=4,sort_keys=True)}")
             functionsToIgnoreJNA = [
                 "helicsCreateBrokerFromArgs",
                 "helicsCreateCoreFromArgs",
@@ -248,6 +250,8 @@ class JavaBindingGenerator(object):
                 "helicsDataBufferToNamedPoint",
                 "helicsCloseLibrary",
                 "helicsErrorInitialize",
+                "helicsInputGetComplexObject",
+                "helicsDataBufferToComplexObject",
                 "helicsErrorClear"
             ]
             functionName = functionDict.get("spelling")
@@ -261,13 +265,17 @@ class JavaBindingGenerator(object):
                 functionJavaCallStr += " "+ functionName + "("
                 size = len(functionDict.get('arguments',{}).keys())
                 count = 0
-                for a in functionDict.get('arguments',{}).keys():
-                    if count == size - 1:
-                        functionJavaCallStr += getFunctionArgs(functionDict.get('arguments',{}).get(a,{})) + ");"
-                    else:
-                        functionJavaCallStr += getFunctionArgs(functionDict.get('arguments',{}).get(a,{})) + ","
-                    count = count + 1
-                return functionJavaCallStr
+                if size != 0:
+                    for a in functionDict.get('arguments',{}).keys():
+                        if count == size - 1:
+                            functionJavaCallStr += getFunctionArgs(functionDict.get('arguments',{}).get(a,{})) + ");"
+                        else:
+                            functionJavaCallStr += getFunctionArgs(functionDict.get('arguments',{}).get(a,{})) + ","
+                        count = count + 1
+                    return functionJavaCallStr
+                else:
+                    functionJavaCallStr += ");"
+                    return functionJavaCallStr
             
             else:
                 return ""
@@ -380,6 +388,8 @@ class JavaBindingGenerator(object):
         helicsJAVAStr += createBoilerPlate("helics", helicsJAVAConstants, helicsJAVAStandAloneConstantFiles)
         for wrapperStr in helicsJAVAWrapperFunctions:
             helicsJAVAStr += wrapperStr 
+        helicsJAVAStr += "\n\t"+"}"+"\n"+"}"
         with open(os.path.join(self.__rootDir, "JavaHelics.java"), "w") as helicsJavaFile:
+            
             helicsJavaFile.write(helicsJAVAStr)
         javaBindingGeneratorLogger.info("JAVA HELICS API successfully created!")
