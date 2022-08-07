@@ -6,7 +6,9 @@ import java.io.InputStream;
 import java.io.File;
 import org.apache.commons.io.FileUtils;
 public class JavaHelics implements JavaHelicsLibrary {
+	private final JavaHelicsLibrary INSTANCE;
 	public JavaHelics(final String fileName) throws IOException {
+		private final JavaHelicsLibrary INSTANCE;
 		INSTANCE = Native.loadLibrary(extratcFile(fileName), JavaHelicsLibrary.class);
 	}
 	private String extratcFile(final String fileName) throws IOException {
