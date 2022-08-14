@@ -1,4 +1,4 @@
-# Java.gitignore
+# https://github.com/github/gitignore/blob/main/Java.gitignore
 # Compiled class file
 *.class
 
@@ -24,7 +24,7 @@
 hs_err_pid*
 replay_pid*
 
-# Python.gitignore
+# https://github.com/github/gitignore/blob/main/Python.gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -186,7 +186,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# JetBrains.gitignore
+# https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
@@ -265,7 +265,7 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-# Windows.gitignore
+# https://github.com/github/gitignore/blob/main/Windows.gitignore
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable
@@ -291,7 +291,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Linux.gitignore
+# https://github.com/github/gitignore/blob/main/Linux.gitignore
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
@@ -306,7 +306,7 @@ $RECYCLE.BIN/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-# macOS.gitignore
+# https://github.com/github/gitignore/blob/main/macOS.gitignore
 # General
 .DS_Store
 .AppleDouble
